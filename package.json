@@ -1,0 +1,25 @@
+{
+  "name": "inee_web",
+  "version": "1.0.0",
+  "description": "crm index",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vergilw/inee_web.git"
+  },
+  "keywords": [
+    "inee"
+  ],
+  "author": "vergilw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vergilw/inee_web/issues"
+  },
+  "homepage": "https://github.com/vergilw/inee_web#readme",
+  "dependencies": {
+    "fomantic-ui": "^2.7.4"
+  }
+}
