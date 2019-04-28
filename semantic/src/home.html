@@ -16,6 +16,11 @@
     <script src="../dist/semantic.min.js"></script>
 
     <style type="text/css">
+        .banner.background {
+            background-image: url("assets/images/home_banner.png");
+            background-size: cover;
+        }
+
         .ui.secondary.pointing.menu {
             height: 6.6em;
         }
@@ -27,9 +32,11 @@
 
         .ui.secondary.pointing.menu {
             border-bottom-width: 1px;
+            border-bottom-color: rgba(255, 255, 255, 0.2);
         }
 
         .ui.secondary.pointing.menu .item {
+            color: white;
             margin: 0.5px 0;
             min-width: 8em;
             font-size: 1.1rem;
@@ -52,56 +59,196 @@
             width: 8.3rem;
             height: 2.9rem;
             border-radius: 1.9rem;
+            color: white;
+
         }
 
-        .ui.secondary.pointing.menu .button.tagged {
+        .ui.secondary.pointing.menu .button.left {
+            box-shadow: 0 0 0 1px;
+        }
+
+        .ui.secondary.pointing.menu .button.right {
             background: #00cddd;
             color: white;
 
         }
+
+        .ui.secondary.pointing.menu .dropdown.item .menu {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .ui.secondary.pointing.menu .dropdown.item .menu .item {
+            text-align: center;
+        }
+
+        .ui.secondary.pointing.menu .dropdown.item .menu .link.item:hover {
+            color: #00cddd !important;
+            background-color: #f2fafc !important;
+        }
+
+        .ui.secondary.pointing.menu .dropdown.item .menu .link.item:last-child {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+
+        .ui.segment.profile,
+        .ui.segment.advantage {
+            padding-top: 5.8em;
+            padding-bottom: 0;
+            margin: 0;
+            border: none;
+            text-align: center;
+        }
+
+        .ui.segment.profile .profile.title,
+        .advantage.title {
+            border: none;
+            text-align: center;
+            font-size: 2.3rem;
+            letter-spacing: 0.1rem;
+            color: #556467;
+        }
+
+        .ui.segment.profile .profile.description,
+        .advantage.description {
+            font-size: 1rem;
+            color: #556467;
+        }
+
+        .ui.segment.profile .column {
+            /* display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center; */
+            padding-top: 5.5em;
+        }
+
+        .ui.segment.profile .column .left {
+            padding-bottom: 7.1em;
+        }
+
+        .ui.segment.profile .column .right {
+            padding-bottom: 22.4em;
+            padding-left: 3.4em;
+        }
     </style>
 
 <body>
-    <div class="ui secondary pointing menu">
-        <div class="ui container">
-            <div class="right menu">
-                <a class="active item">
-                    首页
-                </a>
-                <div class="ui simple dropdown item">
-                    <span class="text">产品介绍</span>
-                    <div class="menu">
-                        <div class="item">氧育CRM</div>
-                        <div class="item">知识分享</div>
-                        <div class="item">大数据分析</div>
+    <!-- <div class="ui image">
+        <img src="assets/images/home_banner.png">
+    </div> -->
+
+    <div id="resizeDiv" class="banner background" style="height:100px; width:100px">
+        <div class="ui secondary pointing menu">
+            <div class="ui container">
+                <div class="right menu">
+                    <a class="active item">
+                        首页
+                    </a>
+                    <div class="ui simple dropdown item">
+                        <span class="text">产品介绍</span>
+                        <div class="ui compact menu">
+                            <div class="link item">氧育CRM</div>
+                            <div class="link item">知识分享</div>
+                            <div class="link item">大数据分析</div>
+                        </div>
                     </div>
+                    <a class="item">
+                        关于我们
+                    </a>
+                    <a class="item">
+                        <button class="ui basic button left">申请入驻</button>
+                    </a>
+                    <a class="item">
+                        <button class="ui button right">申请入驻</button>
+                    </a>
                 </div>
-                <a class="item">
-                    关于我们
-                </a>
-                <a class="item">
-                    <button class="ui basic button">申请入驻</button>
-                </a>
-                <a class="item">
-                    <button class="ui button tagged">申请入驻</button>
-                </a>
             </div>
         </div>
-
     </div>
 
-    <div class="ui vertical menu">
-        <div class="ui dropdown item">
-            Categories
-            <i class="dropdown icon"></i>
-            <div class="menu">
-                <a class="item">Electronics</a>
-                <a class="item">Automotive</a>
-                <a class="item">Home</a>
+
+    <div class="ui segment profile">
+        <a>
+            <p class="profile title">
+                培训机构智能管理平台
+            </p>
+            <p class="profile description">
+                操作简单/数据化精准运营/家校一体服务
+            </p>
+        </a>
+        <div class="column">
+            <img class="left" src="assets/images/home_profile_cloud.png">
+            <img src="assets/images/home_profile_organization.png">
+            <img src="assets/images/home_profile_application.png">
+            <img src="assets/images/home_profile_family.png">
+            <img class="right" src="assets/images/home_profile_cloud.png">
+        </div>
+    </div>
+
+    <div class="ui segment advantage">
+        <a>
+            <p class="advantage title">
+                我们的优势
+            </p>
+            <p class="advantage description">
+                氧育不仅是一个管理平台、更是知识分享、大数据分析平台
+            </p>
+        </a>
+        <div class="ui grid">
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
+            </div>
+            <div class="five wide column">
+                <img src="assets/images/home_advantage_punch.png">
             </div>
         </div>
     </div>
 </body>
 
-</html>
+<script type="text/javascript">
+    window.onload = function () {
+        var browserWidth = document.body.clientWidth;
+        var browserHeight = document.body.clientHeight;
+        var divWidth = browserWidth - 2;
+        var divHeight = divWidth / 16 * 9;
+        $('#resizeDiv').css("width", divWidth + "px");
+        $('#resizeDiv').css("height", divHeight + "px");
+    };
+    window.onresize = function () {
+        var browserWidth = document.body.clientWidth;
+        var browserHeight = document.body.clientHeight;
+        var divWidth = browserWidth - 2;
+        var divHeight = divWidth / 16 * 9;
+        $('#resizeDiv').css("width", divWidth + "px");
+        $('#resizeDiv').css("height", divHeight + "px");
+    };
+</script>
 
+</html>
