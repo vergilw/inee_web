@@ -94,7 +94,9 @@
 
 
         .ui.segment.profile,
-        .ui.segment.advantage {
+        .ui.segment.advantage,
+        .ui.segment.partner,
+        .ui.segment.promotion {
             padding-top: 5.8em;
             padding-bottom: 0;
             margin: 0;
@@ -109,12 +111,14 @@
             font-size: 2.3rem;
             letter-spacing: 0.1rem;
             color: #556467;
+            margin-bottom: 0.5em;
         }
 
         .ui.segment.profile .profile.description,
         .advantage.description {
             font-size: 1rem;
             color: #556467;
+            margin-bottom: 0;
         }
 
         .ui.segment.profile .column {
@@ -133,12 +137,209 @@
             padding-bottom: 22.4em;
             padding-left: 3.4em;
         }
+
+        .ui.segment.advantage .ui.grid {
+            padding-top: 5.3em;
+            max-width: 100em;
+            margin: auto;
+        }
+
+        .ui.segment.advantage .ui.grid .row.top {
+            padding-top: 0;
+            padding-bottom: 5em;
+        }
+
+        .ui.segment.advantage .ui.grid .row.bottom {
+            padding: 0;
+        }
+
+        .ui.segment.advantage .ui.grid .row .column {
+            text-align: center;
+        }
+
+        .ui.segment.advantage .ui.grid .row .column {
+            font-size: 1rem;
+            color: #556467;
+        }
+
+        .ui.segment.advantage .button {
+            margin-top: 4.2em;
+            margin-bottom: 5.6em;
+            width: 12.6rem;
+            height: 3.8em;
+            border-radius: 1.9em;
+            font-size: 1rem;
+            color: #556467;
+            border: solid 0.1rem #c0c8ca;
+        }
+
+        .ui.segment.comment {
+            background-image: url("assets/images/home_comment_bg.png");
+            padding: 0;
+            margin: 0;
+            border: none;
+            text-align: center;
+            height: 41.1rem;
+        }
+
+        .ui.segment.comment ul {
+            width: 100em;
+            border: 1px solid #0FC;
+            height: 100px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .ui.segment.comment .item.list {
+            width: 300em;
+            list-style-type: none;
+        }
+
+        .ui.segment.comment .item.list .item {
+            float: left;
+            margin-left: 20px;
+        }
+
+        .ui.segment.partner .title {
+            border: none;
+            text-align: center;
+            font-size: 2.3rem;
+            letter-spacing: 0.1rem;
+            color: #556467;
+            margin-bottom: 0.5em;
+        }
+
+        .ui.segment.partner .description {
+            font-size: 1rem;
+            color: #556467;
+            margin-bottom: 0;
+        }
+
+        .ui.segment.partner .ui.grid {
+            padding-top: 5.3em;
+            max-width: 100em;
+            margin: auto;
+            padding-bottom: 4.8em;
+        }
+
+        .ui.segment.partner .ui.grid .row {
+            padding: 0;
+        }
+
+        .ui.segment.partner .ui.grid .row .column {
+            text-align: center;
+        }
+
+        .ui.segment.partner .ui.grid .row .column .item {
+            margin: auto;
+            width: 17em;
+            height: 10.4em;
+            box-shadow: 0rem 1rem 2.2rem 0rem rgba(0, 34, 34, 0.05);
+            border-radius: 1.9rem;
+            border: solid 0.1rem #f3f4f6;
+        }
+
+        .ui.segment.partner .ui.grid .row .column .item:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ui.segment.promotion {
+            background-image: url("assets/images/home_promotion.png");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .ui.segment.promotion .ui.container {
+            text-align: left;
+            max-width: 1200px !important;
+            padding: 0;
+        }
+
+        .ui.segment.promotion .ui.container .title {
+            font-size: 3.1rem;
+            letter-spacing: 0.1rem;
+            color: #556467;
+            margin-bottom: 0.4rem;
+        }
+
+        .ui.segment.promotion .ui.container .description {
+            margin-bottom: 4.2em;
+        }
+
+        .ui.segment.promotion .item {
+            text-align: center;
+            width: 146px;
+        }
+
+        .ui.vertical.footer.segment {
+            height: 24.5rem;
+            margin: 0;
+            border: none;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #556467;
+        }
+
+        .ui.vertical.footer.segment .ui.container {
+            max-width: 1200px !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ui.vertical.footer.segment .wide.column {
+            margin: auto;
+        }
+
+        .ui.vertical.footer.segment .four.wide.column {
+            margin-left: 0;
+        }
+
+        .ui.vertical.footer.segment h4 {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #556467;
+        }
+
+        .ui.vertical.footer.segment a {
+            font-size: 0.9rem;
+            color: #556467;
+            padding-top: 1.2rem;
+        }
+
+        .ui.vertical.footer.segment .wide.column .contact {
+            padding-top: 1.2rem;
+        }
+
+        .ui.vertical.footer.segment .two.wide.column {
+            text-align: center;
+            width: 146px;
+        }
+
+        .ui.vertical.footer.segment .two.wide.column p {
+            text-align: center;
+            width: 146px;
+        }
+
+        .ui.vertical.footer.segment .ui.container .footnote {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            color: #556467;
+        }
     </style>
 
 <body>
-    <!-- <div class="ui image">
-        <img src="assets/images/home_banner.png">
-    </div> -->
 
     <div id="resizeDiv" class="banner background" style="height:100px; width:100px">
         <div class="ui secondary pointing menu">
@@ -171,14 +372,12 @@
 
 
     <div class="ui segment profile">
-        <a>
-            <p class="profile title">
-                培训机构智能管理平台
-            </p>
-            <p class="profile description">
-                操作简单/数据化精准运营/家校一体服务
-            </p>
-        </a>
+        <p class="profile title">
+            培训机构智能管理平台
+        </p>
+        <p class="profile description">
+            操作简单/数据化精准运营/家校一体服务
+        </p>
         <div class="column">
             <img class="left" src="assets/images/home_profile_cloud.png">
             <img src="assets/images/home_profile_organization.png">
@@ -189,45 +388,158 @@
     </div>
 
     <div class="ui segment advantage">
-        <a>
-            <p class="advantage title">
-                我们的优势
+        <p class="advantage title">
+            我们的优势
+        </p>
+        <p class="advantage description">
+            氧育不仅是一个管理平台、更是知识分享、大数据分析平台
+        </p>
+        <div class="ui equal width centered grid">
+            <div class="equal width centered row top">
+                <div class="column">
+                    <img src="assets/images/home_advantage_sales.png">
+                    <p>移动销售CRM</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/home_advantage_schedule.png">
+                    <p>家园课程表</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/home_advantage_punch.png">
+                    <p>智能签到考勤</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/home_advantage_share.png">
+                    <p>异业流量共享</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/home_advantage_knowledge.png">
+                    <p>PGC系统化知识分享</p>
+                </div>
+            </div>
+
+            <div class="equal width centered row bottom">
+                <div class="column">
+                    <img src="assets/images/home_advantage_video.png">
+                    <p>UGC趣味视频</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/home_advantage_camera.png">
+                    <p>多摄像头联动识别</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/home_advantage_data.png">
+                    <p>成长大数据分析</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/home_advantage_location.png">
+                    <p>园区智能选址</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/home_advantage_analysis.png">
+                    <p>园区盈亏分析</p>
+                </div>
+            </div>
+        </div>
+        <button class="ui basic button left">查看更多</button>
+    </div>
+
+    <div class="ui segment comment">
+        <p class="title">
+            客户端的评价
+        </p>
+        <p class="description">
+            您的评语，是对我们最大的肯定
+        </p>
+        <button class="ui button right" onclick="moveleft()">申请入驻</button>
+        <ul id="maincontent">
+            <div class="item list">
+                <div class="item">
+                    <p class="content">
+                        评价评价评价评价评价评价评价评价评价评，价评价评价评价评价评价评价评价评评价评价评价评价评价评价，评价评价评价评价评价评价评价评价，评价评价评价评价评价评价评价评价评，价评价评价评价评价评价评价。
+                    </p>
+                </div>
+                <div class="item">
+                    <p class="content">
+                        评价评价评价评价评价评价评价评价评价评，价评价评价评价评价评价评价评价评评价评价评价评价评价评价，评价评价评价评价评价评价评价评价，评价评价评价评价评价评价评价评价评，价评价评价评价评价评价评价。
+                    </p>
+                </div>
+            </div>
+        </ul>
+
+    </div>
+
+    <div class="ui segment partner">
+        <p class="title">
+            合作机构
+        </p>
+        <p class="description">
+            众多知识创造者与氧育一起见证
+        </p>
+        <div class="ui equal width centered grid">
+            <div class="equal width centered row top">
+                <div class="column">
+                    <div class="item">
+                        <img src="assets/images/home_partner_hamood.png">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="promotion" class="ui segment promotion" style="width:100px; height:100px">
+        <div class="ui container">
+            <p class="title">
+                应用下载
             </p>
-            <p class="advantage description">
-                氧育不仅是一个管理平台、更是知识分享、大数据分析平台
+            <p class="description">
+                赶快扫码下载氧育App，发现更多精彩内容
             </p>
-        </a>
-        <div class="ui grid">
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
+            <div class="item">
+                <img src="assets/images/home_promotion_qrcode.png">
+                <p class="footnote">
+                    扫一扫下载
+                </p>
             </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
+        </div>
+    </div>
+
+    <div class="ui vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable equal height grid">
+                <div class="four wide column">
+                    <img src="assets/images/home_footer_logo.png">
+                    <div class="ui link list">
+                        <p class="contact">官方电话：400-0000-1111</p>
+                        <p class="contact">地址：关山大道保利国际中心</p>
+                        <p class="contact">邮箱：213748093@email.com</p>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui header">产品介绍</h4>
+                    <div class="ui link list">
+                        <a href="#" class="item">氧育CRM</a>
+                        <a href="#" class="item">知识分享</a>
+                        <a href="#" class="item">大数据分析</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui header">关于我们</h4>
+                    <div class="ui link list">
+                        <a href="#" class="item">Banana Pre-Order</a>
+                        <a href="#" class="item">DNA FAQ</a>
+                        <a href="#" class="item">How To Access</a>
+                    </div>
+                </div>
+                <div class="two wide column">
+                    <img src="assets/images/home_footer_qrcode.png">
+                    <p>微信公众号</p>
+                </div>
             </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
-            </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
-            </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
-            </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
-            </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
-            </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
-            </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
-            </div>
-            <div class="five wide column">
-                <img src="assets/images/home_advantage_punch.png">
-            </div>
+            <p class="footnote">
+                武汉壹叁壹肆网络科技有限公司
+            </p>
         </div>
     </div>
 </body>
@@ -240,6 +552,10 @@
         var divHeight = divWidth / 16 * 9;
         $('#resizeDiv').css("width", divWidth + "px");
         $('#resizeDiv').css("height", divHeight + "px");
+
+        $('#promotion').css("width", divWidth + "px");
+        var promotionHeight = divWidth / 1920 * 603;
+        $('#promotion').css("height", promotionHeight + "px");
     };
     window.onresize = function () {
         var browserWidth = document.body.clientWidth;
@@ -248,7 +564,17 @@
         var divHeight = divWidth / 16 * 9;
         $('#resizeDiv').css("width", divWidth + "px");
         $('#resizeDiv').css("height", divHeight + "px");
+
+        $('#promotion').css("width", divWidth + "px");
+        var promotionHeight = divWidth / 1920 * 603;
+        $('#promotion').css("height", promotionHeight + "px");
     };
+
+    function moveleft() {
+        var scrleft = $("#maincontent").scrollLeft();
+        if (scrleft > 0) $("#maincontent").animate({ scrollLeft: (scrleft - 82) }, 500);
+    }
+
 </script>
 
 </html>
