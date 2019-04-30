@@ -1,125 +1,151 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
- 
-<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
-<script type="text/javascript" >
-	function moveleft(){
-		var scrleft = $("#maincontent").scrollLeft();
-		if(scrleft>0) $("#maincontent").animate({scrollLeft:(scrleft-82)},500);
-	}
-	function moveright(){
-		var licount = $("#ul1").children("li").size(); //li个数
-		var perwidth = 20 + 62;//每个li的宽度和左控的和
-		var liwidths = licount * perwidth; //所有li的总宽度
-		var targetScrol = liwidths - 300;//li总宽度减去外层div的宽度。即得到滚动条需要滚动的长度
-		var scrleft = $("#maincontent").scrollLeft();//目前滚动条的滚动长度
-		if(!isNaN(targetScrol) && (scrleft < targetScrol)){
-			$("#maincontent").animate({"scrollLeft":scrleft+perwidth},500); //若 目前的滚动条的长度小于 最终需要滚动的长度，则向左拉动滚动条，拉动的距离为 一个li的宽度和它的左外空的距离。
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>无标题文档</title>
+
+	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">
+		function moveleft() {
+			var scrleft = $("#maincontent").scrollLeft();
+			if (scrleft > 0) $("#maincontent").animate({ scrollLeft: (scrleft - 82) }, 500);
 		}
-		
-	}
-</script>
- 
- 
-<style type="text/css">
-	*{
-	margin:0;
-	padding:0;	
-  } 
-  
-  #maincontent{
-	  width:300px;
-	  border:1px solid #0FC;
-	  height:100px;
-	  overflow:hidden;
-	  float:left;
- }
- 
- #ul1{
-	list-style-type:none; 
-	width:3000px;
-}
-	 
-	 #ul1 li{
-		float:left; 
-		margin-left:20px;
-	}
-	.imgdiv{
-		background-image:url(img.png);
-		background-position:top center;
-		background-repeat:no-repeat;
-		width:62px;
-		height:62px;	
-	}
-	.chardiv{
-		text-align:center;	
-	}
-	.leftmove{
-		cursor:pointer;
-		float:left;		
-		height:100px;
-		line-height:100px;
-		text-align:center;
-		margin-right:10px;
-	}
-	.rightmove{
-	 cursor:pointer;
-	 float:left;
-	 height:100px;	
-	line-height:100px;
-	text-align:center;	
-	margin-left:10px;
-	}
-</style>
- 
+		function moveright() {
+			var licount = $("#ul1").children("li").size(); //li个数
+			var perwidth = 20 + 62;//每个li的宽度和左控的和
+			var liwidths = licount * perwidth; //所有li的总宽度
+			var targetScrol = liwidths - 300;//li总宽度减去外层div的宽度。即得到滚动条需要滚动的长度
+			var scrleft = $("#maincontent").scrollLeft();//目前滚动条的滚动长度
+			if (!isNaN(targetScrol) && (scrleft < targetScrol)) {
+				$("#maincontent").animate({ "scrollLeft": scrleft + perwidth }, 500); //若 目前的滚动条的长度小于 最终需要滚动的长度，则向左拉动滚动条，拉动的距离为 一个li的宽度和它的左外空的距离。
+			}
+
+		}
+	</script>
+
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			box-sizing: border-box;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.clearfix:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		/*使元素进行位移一般有margin，relative以及绝对定位几种方式，要轮播显然使用绝对定位*/
+		.carousel {
+			position: relative;
+			width: 400px;
+			height: 250px;
+			overflow: hidden;
+
+			top: 50px;
+			/*设置carousel显露出来的部分水平居中*/
+			left: 50%;
+			transform: translate(-50%);
+		}
+
+		.carousel .img-ct {
+			width: 1600px;
+			position: absolute;
+		}
+
+		.carousel .img-ct img {
+			width: 400px;
+			height: 250px;
+		}
+
+		.carousel .img-ct>li {
+			float: left;
+		}
+
+		.carousel .arrow {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			top: 50%;
+			margin-top: -25px;
+			color: #fff;
+			line-height: 50px;
+			text-align: center;
+			font-size: 22px;
+		}
+
+		.carousel .arrow:hover {
+			background: rgba(0, 0, 0, 0.1);
+		}
+
+		.carousel .pre {
+			left: 10px;
+		}
+
+		.carousel .next {
+			right: 10px;
+		}
+
+		.carousel .bullet {
+			position: absolute;
+			width: 100%;
+			top: 87%;
+			text-align: center;
+		}
+
+		.carousel .bullet>li {
+			display: inline-block;
+			width: 25px;
+			height: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.carousel .bullet>li.active {
+			background: #ccc;
+		}
+	</style>
+
 </head>
- 
+
 <body>
- 
-<div style="position:absolute;left:200px;top:100px;">
- 
-<div class="leftmove" onclick="moveleft()"><<</div>
-<div id="maincontent">
-	<ul id="ul1">
-    	<li>
-        	<div class='imgdiv'></div>
-            <div class='chardiv'>img1</div>
-        </li>
-        <li>
-        	<div class='imgdiv'></div>
-            <div class='chardiv'>img2</div>
-        </li>
-        <li>
-        	<div class='imgdiv'></div>
-            <div class='chardiv'>img3</div>
-        </li>
-        <li>
-        	<div class='imgdiv'></div>
-            <div class='chardiv'>img4</div>
-        </li>
-        <li>
-        	<div class='imgdiv'></div>
-            <div class='chardiv'>img5</div>
-        </li>
-        <li>
-        	<div class='imgdiv'></div>
-            <div class='chardiv'>img6</div>
-        </li>
-        <li>
-        	<div class='imgdiv'></div>
-            <div class='chardiv'>img7</div>
-        </li>
-        <li>
-        	<div class='imgdiv'></div>
-            <div class='chardiv'>img8</div>
-        </li>
-    </ul>
-</div>
-<div class="rightmove" onclick="moveright()">>></div>
- 
-</div>
+
+	<div class="carousel">
+		<ul class="img-ct">
+			<li data-id="0"><a
+					href="#">![](http://upload-images.jianshu.io/upload_images/7113407-2822b6ff0ee054f9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</a>
+			</li>
+			<li data-id="1"><a
+					href="#">![](http://upload-images.jianshu.io/upload_images/7113407-0ea8f1080ca906ff.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</a>
+			</li>
+			<li data-id="2"><a
+					href="#">![](http://upload-images.jianshu.io/upload_images/7113407-f10834a83445c57c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</a>
+			</li>
+			<li data-id="3"><a
+					href="#">![](http://upload-images.jianshu.io/upload_images/7113407-41418e1d0026658d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</a>
+			</li>
+		</ul>
+		<a href="#" class="pre arrow"></a>
+		<a href="#" class="next arrow"></a>
+		<ul class="bullet">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
 </body>
+
 </html>

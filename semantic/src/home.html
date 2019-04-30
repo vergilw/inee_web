@@ -180,25 +180,102 @@
             border: none;
             text-align: center;
             height: 41.1rem;
+
         }
 
-        .ui.segment.comment ul {
-            width: 100em;
-            border: 1px solid #0FC;
-            height: 100px;
-            overflow: hidden;
-            float: left;
+        .ui.segment.comment .title {
+            font-size: 2.3rem;
+            letter-spacing: 0.1rem;
+            color: #ffffff;
+            margin: 0;
+            padding-top: 5.3rem;
+        }
+
+        .ui.segment.comment .description {
+            font-size: 1rem;
+            color: #ffffff;
+            margin: 0;
+            padding-top: 0.6rem;
         }
 
         .ui.segment.comment .item.list {
-            width: 300em;
-            list-style-type: none;
+            /* display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center; */
+            margin: auto;
+            text-align: center;
+
+            width: 700px;
+
+            overflow: hidden;
+        }
+
+        .ui.segment.comment .item.list ul {
+            width: 2100px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+            position: relative;
         }
 
         .ui.segment.comment .item.list .item {
+            width: 700px;
             float: left;
-            margin-left: 20px;
+            font-size: 1.1rem;
+            color: #ffffff;
+            padding-top: 5.1rem;
         }
+
+        .ui.segment.comment .item.list .item .quote {
+            padding-top: 2.3rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ui.segment.comment .item.list .item .avatar {
+            border: solid 0.3rem #ffffff;
+            width: 5rem;
+            height: 5rem;
+            margin-top: 2.3rem;
+            margin-right: 0;
+        }
+
+        .ui.segment.comment .item.list .item .name {
+            padding-top: 1rem;
+            font-size: 1rem;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .ui.segment.comment .item.list .item .tag {
+            padding-top: 0.3rem;
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+
+        .ui.segment.comment .ui.button.left {
+            display: block;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            padding-left: 10.2rem;
+            background: none;
+        }
+
+        .ui.segment.comment .ui.button.right {
+            display: block;
+            /* position: absolute; */
+            float: right;
+            /* top: 50%; */
+            /* margin-top: -20.5rem; */
+            padding-right: 10.2rem;
+            background: none;
+        }
+
 
         .ui.segment.partner .title {
             border: none;
@@ -446,27 +523,48 @@
 
     <div class="ui segment comment">
         <p class="title">
-            客户端的评价
+            客户的评价
         </p>
         <p class="description">
             您的评语，是对我们最大的肯定
         </p>
-        <button class="ui button right" onclick="moveleft()">申请入驻</button>
-        <ul id="maincontent">
-            <div class="item list">
-                <div class="item">
-                    <p class="content">
-                        评价评价评价评价评价评价评价评价评价评，价评价评价评价评价评价评价评价评评价评价评价评价评价评价，评价评价评价评价评价评价评价评价，评价评价评价评价评价评价评价评价评，价评价评价评价评价评价评价。
-                    </p>
-                </div>
-                <div class="item">
-                    <p class="content">
-                        评价评价评价评价评价评价评价评价评价评，价评价评价评价评价评价评价评价评评价评价评价评价评价评价，评价评价评价评价评价评价评价评价，评价评价评价评价评价评价评价评价评，价评价评价评价评价评价评价。
-                    </p>
-                </div>
-            </div>
-        </ul>
 
+        <div class="item list">
+            <ul id="comment">
+                <li class="item">
+                    <p class="content">
+                        123
+                    </p>
+                    <img class="quote" src="assets/images/home_comment_quote.png">
+                    <img class="avatar" src="assets/images/home_comment_quote.png">
+                    <p class="name">
+                        橙子老师
+                    </p>
+                    <p class="tag">
+                        育儿专家/全职太太
+                    </p>
+                </li>
+                <li class="item">
+                    <p class="content">
+                        456
+                    </p>
+                    <img class="quote" src="assets/images/home_comment_quote.png">
+                    <img class="avatar" src="assets/images/home_comment_quote.png">
+                    <p class="name">
+                        橙子老师
+                    </p>
+                    <p class="tag">
+                        育儿专家/全职太太
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <button class="ui button left" onclick="moveleft()">
+            <img src="assets/images/home_comment_left.png">
+        </button>
+        <button class="ui button right" onclick="moveleft()">
+            <img src="assets/images/home_comment_right.png">
+        </button>
     </div>
 
     <div class="ui segment partner">
@@ -570,9 +668,19 @@
         $('#promotion').css("height", promotionHeight + "px");
     };
 
+    var commentPageNumber = 0;
+
     function moveleft() {
-        var scrleft = $("#maincontent").scrollLeft();
-        if (scrleft > 0) $("#maincontent").animate({ scrollLeft: (scrleft - 82) }, 500);
+        // alert("haha");
+
+        // document.getElementById("comment").style.left = "-100%";
+
+        $("#comment").animate({
+            left: '-=' + $("#comment .item").width(),
+        }, function () {
+            commentPageNumber++;
+
+        })
     }
 
 </script>
