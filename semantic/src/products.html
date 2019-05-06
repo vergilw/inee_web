@@ -15,22 +15,97 @@
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="../dist/semantic.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.2/flickity.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.2/flickity.pkgd.js"></script>
 
     <style type="text/css">
+        /* common */
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ui.container {
+            width: 100%;
+            padding: 0 12rem;
+        }
+
+        .ui.segment {
+            border: none;
+            box-shadow: none;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .title {
+            font-size: 3.1rem;
+            line-height: 4.4rem;
+            color: #556467;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.7rem;
+            color: #556467;
+        }
+
+        .caption {
+            font-size: 1.1rem;
+            color: #556467;
+            padding-bottom: 0.9rem;
+        }
+
+        .product-content {
+            padding-top: 4.3rem !important;
+        }
+
+        .product-content .product-list {
+            position: relative !important;
+            max-width: 1200px !important;
+            margin: auto !important;
+        }
+
+        .product-item {
+            display: flex !important;
+            align-items: center !important;
+            height: 9.3rem !important;
+        }
+
+        .product-item p {
+            display: inline-block !important;
+        }
+
+        .product-item .progress {
+            position: absolute !important;
+            bottom: 0 !important;
+            width: 18.2rem !important;
+            left: 1.7rem !important;
+            margin: 0 !important;
+
+            background: rgba(0, 205, 221, 0.1) !important;
+            border-radius: 0.1rem !important;
+            font-size: 0.1rem !important;
+        }
+
+        .product-item .progress .bar {
+            background: #00cddd !important;
+        }
+
+        .product-preview {
+            margin: 0 !important;
+            position: absolute !important;
+            right: 0 !important;
+            top: 0 !important;
+        }
+
+        /* module */
         .banner.background {
-            background-image: url("assets/images/home_banner.png");
+            background-image: url("assets/images/products_banner.png");
             background-size: cover;
         }
 
         .ui.secondary.pointing.menu {
             height: 6.6em;
-        }
-
-        .ui.container {
-            width: 100%;
-            padding: 0 12em;
         }
 
         .ui.secondary.pointing.menu {
@@ -53,9 +128,8 @@
             border-bottom-width: 0.3rem;
         }
 
-        .ui.secondary.pointing.menu .active.item {
-            color: #00cddd;
-            border-color: #00cddd;
+        .ui.secondary.pointing.menu .ui.simple.dropdown.item {
+            border-bottom-color: white;
         }
 
         .ui.secondary.pointing.menu .button {
@@ -63,17 +137,13 @@
             height: 2.9rem;
             border-radius: 1.9rem;
             color: white;
-            margin-left: 3.6rem;
-        }
-
-        .ui.secondary.pointing.menu .button {
             box-shadow: 0 0 0 1px;
+            margin-left: 3.6rem;
         }
 
         .ui.secondary.pointing.menu .button:hover {
             background: white;
             color: #00cddd;
-            box-shadow: none;
         }
 
         .ui.secondary.pointing.menu .dropdown.item .menu {
@@ -95,14 +165,44 @@
             border-bottom-right-radius: 15px;
         }
 
+        .ui.container.banner {
+            margin-top: 8.8rem;
+        }
+
+        .ui.container.banner .title {
+            margin-bottom: 0.2rem;
+        }
+
+        .ui.container.banner .button {
+            width: 11.6rem;
+            height: 3.6rem;
+            background-color: #ffffff;
+            box-shadow: 0rem 0.6rem 1.1rem 0rem rgba(0, 205, 221, 0.2);
+            border-radius: 1.8rem;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: #00cddd;
+            margin-top: 13.8rem;
+        }
+
+        /* sales */
+        /* .sales .list {
+            width: 18.2rem;
+        } */
+
+        .sales {
+            height: 52rem;
+        }
+
+        
 
         .ui.segment.profile,
         .ui.segment.advantage,
         .ui.segment.partner,
         .ui.segment.promotion {
-            padding-top: 5.8em;
+            /* padding-top: 5.8em;
             padding-bottom: 0;
-            margin: 0;
+            margin: 0; */
             border: none;
             text-align: center;
         }
@@ -419,17 +519,17 @@
         <div class="ui secondary pointing menu">
             <div class="ui container">
                 <div class="right menu">
-                    <a class="active item">
+                    <a class="item" href="./home.html">
                         首页
                     </a>
-                    <a class="ui simple dropdown item" href="./products.html">
+                    <div class="ui simple dropdown item">
                         <span class="text">产品介绍</span>
                         <div class="ui compact menu">
                             <div class="link item">氧育CRM</div>
                             <div class="link item">知识分享</div>
                             <div class="link item">大数据分析</div>
                         </div>
-                    </a>
+                    </div>
                     <a class="item">
                         关于我们
                     </a>
@@ -439,8 +539,78 @@
                 </div>
             </div>
         </div>
+        <div class="ui container banner">
+            <p class="profile title">
+                氧育智能管理平台
+            </p>
+            <p class="profile description">
+                多角度、分级、分权限管理管理园区，
+            </p>
+            <p class="profile description">
+                构建良好生态管理系统，让园区管理更便捷。
+            </p>
+            <button class="ui basic button">了解更多</button>
+        </div>
     </div>
 
+    <div class="ui segment sales">
+        <p class="title">
+            销售管理
+        </p>
+        <p class="description">
+            众多知识创造者与氧育一起见证
+        </p>
+        <div class="ui container product-content">
+            <div class="ui list product-list">
+                <div class="ui segment">
+                    <a class="item product-item">
+                        <img src="assets/images/products/products_sales_programmed_default.png">
+                        <p class="caption">销售移动化、网络化</p>
+                        <div class="ui tiny progress" data-percent="0">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="item product-item">
+                        <img src="assets/images/products/products_sales_convenient_default.png">
+                        <p class="caption">客户资源便捷录入</p>
+                        <div class="ui tiny progress" data-percent="0">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="item product-item">
+                        <img src="assets/images/products/products_sales_shared_default.png">
+                        <p class="caption">异业资源共享</p>
+                        <div class="ui tiny progress" data-percent="0">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="item product-item">
+                        <img src="assets/images/products/products_sales_msg_default.png">
+                        <p class="caption">消息、通知灵活发送</p>
+                        <div class="ui tiny progress" data-percent="0">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment preview product-preview">
+                    <img src="assets/images/products/products_sales_programmed_preview.png">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
 
     <div class="ui segment profile">
         <p class="profile title">
