@@ -81,6 +81,10 @@
             border-bottom-right-radius: 15px;
         }
 
+        .ui.secondary.pointing.menu .dropdown.item a {
+            color: white;
+        }
+
         .ui.secondary.pointing.menu .dropdown.item .menu .item {
             text-align: center;
         }
@@ -422,14 +426,17 @@
                     <a class="active item">
                         首页
                     </a>
-                    <a class="ui simple dropdown item" href="./products.html">
-                        <span class="text">产品介绍</span>
+                    <div class="ui simple dropdown item">
+                        <a class="text" href="./products.html">
+                            产品介绍
+                        </a>
                         <div class="ui compact menu">
-                            <div class="link item">氧育CRM</div>
-                            <div class="link item">知识分享</div>
-                            <div class="link item">大数据分析</div>
+                            <a class="link item" href="./products.html#sales">销售管理</a>
+                            <a class="link item" href="./products.html#education">教务管理</a>
+                            <a class="link item" href="./products.html#knowledge">知识分享</a>
+                            <a class="link item" href="./products.html#analysis">大数据分析</a>
                         </div>
-                    </a>
+                    </div>
                     <a class="item">
                         关于我们
                     </a>

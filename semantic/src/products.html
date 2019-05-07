@@ -35,6 +35,7 @@
             text-align: center;
             padding: 0;
             margin: 0;
+            background-color: transparent;
         }
 
         .title {
@@ -56,13 +57,18 @@
         }
 
         .product-content {
-            padding-top: 4.3rem !important;
+            padding-top: 3rem !important;
         }
 
         .product-content .product-list {
             position: relative !important;
             max-width: 1200px !important;
             margin: auto !important;
+
+            height: 650px;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
         }
 
         .product-item {
@@ -71,11 +77,31 @@
             height: 9.3rem !important;
         }
 
+        .product-item:hover {
+            cursor: pointer;
+        }
+
+        .normal.product-item .default {
+            display: block;
+        }
+
+        .normal.product-item .selected {
+            display: none;
+        }
+
+        .active.product-item .default {
+            display: none;
+        }
+
+        .active.product-item .selected {
+            display: block;
+        }
+
         .product-item p {
             display: inline-block !important;
         }
 
-        .product-item .progress {
+        .product-item .ui.progress {
             position: absolute !important;
             bottom: 0 !important;
             width: 18.2rem !important;
@@ -87,15 +113,15 @@
             font-size: 0.1rem !important;
         }
 
-        .product-item .progress .bar {
+        .product-item .ui.progress .bar {
             background: #00cddd !important;
         }
 
         .product-preview {
-            margin: 0 !important;
+            margin: auto !important;
             position: absolute !important;
             right: 0 !important;
-            top: 0 !important;
+            /* top: 0 !important; */
         }
 
         /* module */
@@ -171,6 +197,11 @@
 
         .ui.container.banner .title {
             margin-bottom: 0.2rem;
+            color: white;
+        }
+
+        .ui.container.banner .description {
+            color: white;
         }
 
         .ui.container.banner .button {
@@ -194,262 +225,48 @@
             height: 52rem;
         }
 
-        
-
-        .ui.segment.profile,
-        .ui.segment.advantage,
-        .ui.segment.partner,
-        .ui.segment.promotion {
-            /* padding-top: 5.8em;
-            padding-bottom: 0;
-            margin: 0; */
-            border: none;
-            text-align: center;
+        .education {
+            padding-top: 10rem !important;
+            height: 65rem;
         }
 
-        .ui.segment.profile .profile.title,
-        .advantage.title {
-            border: none;
-            text-align: center;
-            font-size: 2.3rem;
-            letter-spacing: 0.1rem;
-            color: #556467;
-            margin-bottom: 0.5em;
+        .education .product-item {
+            justify-content: flex-end;
         }
 
-        .ui.segment.profile .profile.description,
-        .advantage.description {
-            font-size: 1rem;
-            color: #556467;
-            margin-bottom: 0;
+        .education .product-preview {
+            left: 0 !important;
+            right: auto !important;
         }
 
-        .ui.segment.profile .row {
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-top: 5.5em;
+        .education .product-item .ui.progress {
+            right: 0 !important;
+            left: auto !important;
         }
 
-        .ui.segment.profile .row .left {
-            padding-bottom: 7.1em;
+        .knowledge {
+            margin-top: 10rem !important;
+            height: 1185px;
+            background-image: url("assets/images/products/products_knowledge_bg.png") !important;
+            background-size: contain;
         }
 
-        .ui.segment.profile .row .right {
-            padding-bottom: 22.4em;
-            padding-left: 3.4em;
+        .knowledge .title {
+            padding-top: 10rem !important;
         }
 
-        .ui.segment.advantage .ui.grid {
-            padding-top: 5.3em;
-            max-width: 100em;
-            margin: auto;
+        .analysis .product-item {
+            justify-content: flex-end;
         }
 
-        .ui.segment.advantage .ui.grid .row.top {
-            padding-top: 0;
-            padding-bottom: 5em;
+        .analysis .product-preview {
+            left: 0 !important;
+            right: auto !important;
         }
 
-        .ui.segment.advantage .ui.grid .row.bottom {
-            padding: 0;
-        }
-
-        .ui.segment.advantage .ui.grid .row .column {
-            text-align: center;
-        }
-
-        .ui.segment.advantage .ui.grid .row .column {
-            font-size: 1rem;
-            color: #556467;
-        }
-
-        .ui.segment.advantage .button {
-            margin-top: 4.2em;
-            margin-bottom: 5.6em;
-            width: 12.6rem;
-            height: 3.8em;
-            border-radius: 1.9em;
-            font-size: 1rem;
-            color: #556467;
-            border: solid 0.1rem #c0c8ca;
-        }
-
-        .ui.segment.comment {
-            background-image: url("assets/images/home_comment_bg.png");
-            padding: 0;
-            margin: 0;
-            border: none;
-            text-align: center;
-            height: 41.1rem;
-
-        }
-
-        .ui.segment.comment .title {
-            font-size: 2.3rem;
-            letter-spacing: 0.1rem;
-            color: #ffffff;
-            margin: 0;
-            padding-top: 5.3rem;
-        }
-
-        .ui.segment.comment .description {
-            font-size: 1rem;
-            color: #ffffff;
-            margin: 0;
-            padding-top: 0.6rem;
-        }
-
-        .ui.segment.comment .gallery.js-flickity {
-            margin: 0 10rem;
-            text-align: center;
-
-            /* width: 700px; */
-
-            /* overflow: hidden; */
-        }
-
-        /* .ui.segment.comment .item.list ul {
-            width: 2100px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-
-            position: relative;
-        } */
-
-        .ui.segment.comment .gallery.js-flickity .gallery-cell {
-            width: 100%;
-            float: left;
-            font-size: 1.1rem;
-            color: #ffffff;
-            padding-top: 5.1rem;
-        }
-
-        .ui.segment.comment .gallery.js-flickity .gallery-cell .quote {
-            padding-top: 2.3rem;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .ui.segment.comment .gallery.js-flickity .gallery-cell .avatar {
-            border: solid 0.3rem #ffffff;
-            width: 5rem;
-            height: 5rem;
-            margin-top: 2.3rem;
-            margin-right: 0;
-        }
-
-        .ui.segment.comment .gallery.js-flickity .gallery-cell .name {
-            padding-top: 1rem;
-            font-size: 1rem;
-            color: #ffffff;
-            margin: 0;
-        }
-
-        .ui.segment.comment .gallery.js-flickity .gallery-cell .tag {
-            padding-top: 0.3rem;
-            font-size: 0.9rem;
-            color: #ffffff;
-        }
-
-        .ui.segment.comment .ui.button.left {
-            display: block;
-            position: absolute;
-            top: 50%;
-            margin-top: -35px;
-            padding-left: 10.2rem;
-            background: none;
-        }
-
-        .ui.segment.comment .ui.button.right {
-            display: block;
-            /* position: absolute; */
-            float: right;
-            /* top: 50%; */
-            /* margin-top: -20.5rem; */
-            padding-right: 10.2rem;
-            background: none;
-        }
-
-        .ui.segment.partner .title {
-            border: none;
-            text-align: center;
-            font-size: 2.3rem;
-            letter-spacing: 0.1rem;
-            color: #556467;
-            margin-bottom: 0.5em;
-        }
-
-        .ui.segment.partner .description {
-            font-size: 1rem;
-            color: #556467;
-            margin-bottom: 0;
-        }
-
-        .ui.segment.partner .ui.grid {
-            padding-top: 5.3em;
-            max-width: 100em;
-            margin: auto;
-            padding-bottom: 4.8em;
-        }
-
-        .ui.segment.partner .ui.grid .row {
-            padding: 0;
-        }
-
-        .ui.segment.partner .ui.grid .row .column {
-            text-align: center;
-        }
-
-        .ui.segment.partner .ui.grid .row .column .item {
-            margin: auto;
-            width: 17em;
-            height: 10.4em;
-            box-shadow: 0rem 1rem 2.2rem 0rem rgba(0, 34, 34, 0.05);
-            border-radius: 1.9rem;
-            border: solid 0.1rem #f3f4f6;
-        }
-
-        .ui.segment.partner .ui.grid .row .column .item:first-child {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ui.segment.promotion {
-            background-image: url("assets/images/home_promotion.png");
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-        }
-
-        .ui.segment.promotion .ui.container {
-            text-align: left;
-            max-width: 1200px !important;
-            padding: 0;
-        }
-
-        .ui.segment.promotion .ui.container .title {
-            font-size: 3.1rem;
-            letter-spacing: 0.1rem;
-            color: #556467;
-            margin-bottom: 0.4rem;
-        }
-
-        .ui.segment.promotion .ui.container .description {
-            margin-bottom: 4.2em;
-        }
-
-        .ui.segment.promotion .item {
-            text-align: center;
-            width: 146px;
+        .analysis .product-item .ui.progress {
+            right: 0 !important;
+            left: auto !important;
         }
 
         .ui.vertical.footer.segment {
@@ -525,9 +342,10 @@
                     <div class="ui simple dropdown item">
                         <span class="text">产品介绍</span>
                         <div class="ui compact menu">
-                            <div class="link item">氧育CRM</div>
-                            <div class="link item">知识分享</div>
-                            <div class="link item">大数据分析</div>
+                            <a class="link item" href="#sales">销售管理</a>
+                            <a class="link item" href="#education">教务管理</a>
+                            <a class="link item" href="#knowledge">知识分享</a>
+                            <a class="link item" href="#analysis">大数据分析</a>
                         </div>
                     </div>
                     <a class="item">
@@ -554,49 +372,59 @@
     </div>
 
     <div class="ui segment sales">
-        <p class="title">
-            销售管理
-        </p>
+        <a name="sales">
+            <p class="title">
+                销售管理
+            </p>
+        </a>
         <p class="description">
             众多知识创造者与氧育一起见证
         </p>
         <div class="ui container product-content">
             <div class="ui list product-list">
                 <div class="ui segment">
-                    <a class="item product-item">
-                        <img src="assets/images/products/products_sales_programmed_default.png">
+                    <a class="active item product-item"
+                        onclick="onChangePreview('assets/images/products/products_sales_programmed_preview.png', this)">
+                        <img class="default" src="assets/images/products/products_sales_programmed_default.png">
+                        <img class="selected" src="assets/images/products/products_sales_programmed_selected.png">
                         <p class="caption">销售移动化、网络化</p>
-                        <div class="ui tiny progress" data-percent="0">
+                        <div class="ui tiny progress" data-percent="1">
                             <div class="bar">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="ui segment">
-                    <a class="item product-item">
-                        <img src="assets/images/products/products_sales_convenient_default.png">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_sales_convenient_preview.png', this)">
+                        <img class="default" src="assets/images/products/products_sales_convenient_default.png">
+                        <img class="selected" src="assets/images/products/products_sales_convenient_selected.png">
                         <p class="caption">客户资源便捷录入</p>
-                        <div class="ui tiny progress" data-percent="0">
+                        <div class="ui tiny progress" data-percent="1">
                             <div class="bar">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="ui segment">
-                    <a class="item product-item">
-                        <img src="assets/images/products/products_sales_shared_default.png">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_sales_shared_preview.png', this)">
+                        <img class="default" src="assets/images/products/products_sales_shared_default.png">
+                        <img class="selected" src="assets/images/products/products_sales_shared_selected.png">
                         <p class="caption">异业资源共享</p>
-                        <div class="ui tiny progress" data-percent="0">
+                        <div class="ui tiny progress" data-percent="1">
                             <div class="bar">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="ui segment">
-                    <a class="item product-item">
-                        <img src="assets/images/products/products_sales_msg_default.png">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_sales_msg_preview.png', this)">
+                        <img class="default" src="assets/images/products/products_sales_msg_default.png">
+                        <img class="selected" src="assets/images/products/products_sales_msg_selected.png">
                         <p class="caption">消息、通知灵活发送</p>
-                        <div class="ui tiny progress" data-percent="0">
+                        <div class="ui tiny progress" data-percent="1">
                             <div class="bar">
                             </div>
                         </div>
@@ -606,193 +434,194 @@
                     <img src="assets/images/products/products_sales_programmed_preview.png">
                 </div>
             </div>
-
-        </div>
-
-    </div>
-    </div>
-
-    <div class="ui segment profile">
-        <p class="profile title">
-            培训机构智能管理平台
-        </p>
-        <p class="profile description">
-            操作简单/数据化精准运营/家校一体服务
-        </p>
-        <div class="row">
-            <img class="left" src="assets/images/home_profile_cloud.png">
-            <img class="first" src="assets/images/home_profile_organization.png">
-            <img class="second" src="assets/images/home_profile_application.png">
-            <img class="third" src="assets/images/home_profile_family.png">
-            <img class="right" src="assets/images/home_profile_cloud.png">
         </div>
     </div>
 
-    <div class="ui segment advantage">
-        <p class="advantage title">
-            我们的优势
-        </p>
-        <p class="advantage description">
-            氧育不仅是一个管理平台、更是知识分享、大数据分析平台
-        </p>
-        <div class="ui equal width centered grid">
-            <div class="equal width centered row top">
-                <div class="column">
-                    <img src="assets/images/home_advantage_sales.png">
-                    <p>移动销售CRM</p>
-                </div>
-                <div class="column">
-                    <img src="assets/images/home_advantage_schedule.png">
-                    <p>家园课程表</p>
-                </div>
-                <div class="column">
-                    <img src="assets/images/home_advantage_punch.png">
-                    <p>智能签到考勤</p>
-                </div>
-                <div class="column">
-                    <img src="assets/images/home_advantage_share.png">
-                    <p>异业流量共享</p>
-                </div>
-                <div class="column">
-                    <img src="assets/images/home_advantage_knowledge.png">
-                    <p>PGC系统化知识分享</p>
-                </div>
-            </div>
 
-            <div class="equal width centered row bottom">
-                <div class="column">
-                    <img src="assets/images/home_advantage_video.png">
-                    <p>UGC趣味视频</p>
-                </div>
-                <div class="column">
-                    <img src="assets/images/home_advantage_camera.png">
-                    <p>多摄像头联动识别</p>
-                </div>
-                <div class="column">
-                    <img src="assets/images/home_advantage_data.png">
-                    <p>成长大数据分析</p>
-                </div>
-                <div class="column">
-                    <img src="assets/images/home_advantage_location.png">
-                    <p>园区智能选址</p>
-                </div>
-                <div class="column">
-                    <img src="assets/images/home_advantage_analysis.png">
-                    <p>园区盈亏分析</p>
-                </div>
-            </div>
-        </div>
-        <button class="ui basic button left">查看更多</button>
-    </div>
-
-    <div class="ui segment comment">
-        <p class="title">
-            客户的评价
-        </p>
-        <p class="description">
-            您的评语，是对我们最大的肯定
-        </p>
-
-        <!-- <div class="item list">
-            <ul id="comment">
-                <li class="item">
-                    <p class="content">
-                        123
-                    </p>
-                    <img class="quote" src="assets/images/home_comment_quote.png">
-                    <img class="avatar" src="assets/images/home_comment_quote.png">
-                    <p class="name">
-                        橙子老师
-                    </p>
-                    <p class="tag">
-                        育儿专家/全职太太
-                    </p>
-                </li>
-                <li class="item">
-                    <p class="content">
-                        456
-                    </p>
-                    <img class="quote" src="assets/images/home_comment_quote.png">
-                    <img class="avatar" src="assets/images/home_comment_quote.png">
-                    <p class="name">
-                        橙子老师
-                    </p>
-                    <p class="tag">
-                        育儿专家/全职太太
-                    </p>
-                </li>
-            </ul>
-        </div>
-        <button class="ui button left" onclick="moveleft()">
-            <img src="assets/images/home_comment_left.png">
-        </button>
-        <button class="ui button right" onclick="moveleft()">
-            <img src="assets/images/home_comment_right.png">
-        </button> -->
-
-        <div class="gallery js-flickity"
-            data-flickity-options='{ "cellAlign": "left", "contain": true, "pageDots": false}'>
-            <div class="gallery-cell">
-                <p class="content">
-                    123
-                </p>
-                <img class="quote" src="assets/images/home_comment_quote.png">
-                <img class="avatar" src="assets/images/home_comment_quote.png">
-                <p class="name">
-                    橙子老师
-                </p>
-                <p class="tag">
-                    育儿专家/全职太太
-                </p>
-            </div>
-            <div class="gallery-cell">
-                <p class="content">
-                    456
-                </p>
-                <img class="quote" src="assets/images/home_comment_quote.png">
-                <img class="avatar" src="assets/images/home_comment_quote.png">
-                <p class="name">
-                    橙子老师
-                </p>
-                <p class="tag">
-                    育儿专家/全职太太
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="ui segment partner">
-        <p class="title">
-            合作机构
-        </p>
+    <div class="ui segment education">
+        <a name="education">
+            <p class="title">
+                教务管理
+            </p>
+        </a>
         <p class="description">
             众多知识创造者与氧育一起见证
         </p>
-        <div class="ui equal width centered grid">
-            <div class="equal width centered row top">
-                <div class="column">
-                    <div class="item">
-                        <img src="assets/images/home_partner_hamood.png">
-                    </div>
+        <div class="ui container product-content">
+            <div class="ui list product-list">
+                <div class="ui segment">
+                    <a class="active item product-item"
+                        onclick="onChangePreview('assets/images/products/products_education_schedule_preview.png', this)">
+                        <p class="caption">智能排课</p>
+                        <img class="default" src="assets/images/products/products_education_schedule_default.png">
+                        <img class="selected" src="assets/images/products/products_education_schedule_selected.png">
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_education_punch_preview.png', this)">
+                        <p class="caption">扫码考勤</p>
+                        <img class="default" src="assets/images/products/products_education_punch_default.png">
+                        <img class="selected" src="assets/images/products/products_education_punch_selected.png">
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_education_permission_preview.png', this)">
+                        <p class="caption">课程教案分权限修改、查看</p>
+                        <img class="default" src="assets/images/products/products_education_permission_default.png">
+                        <img class="selected" src="assets/images/products/products_education_permission_selected.png">
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment preview product-preview">
+                    <img src="assets/images/products/products_education_schedule_preview.png">
                 </div>
             </div>
-
         </div>
     </div>
 
-    <div id="promotion" class="ui segment promotion" style="width:100px; height:100px">
-        <div class="ui container">
+
+    <div class="ui segment knowledge">
+        <a name="knowledge">
             <p class="title">
-                应用下载
+                知识分享
             </p>
-            <p class="description">
-                赶快扫码下载氧育App，发现更多精彩内容
+        </a>
+        <p class="description">
+            众多知识创造者与氧育一起见证
+        </p>
+        <div class="ui container product-content">
+            <div class="ui list product-list">
+                <div class="ui segment">
+                    <a class="active item product-item"
+                        onclick="onChangePreview('assets/images/products/products_knowledge_structural_preview.png', this)">
+                        <img class="default" src="assets/images/products/products_knowledge_structural_default.png">
+                        <img class="selected" src="assets/images/products/products_knowledge_structural_selected.png">
+                        <p class="caption">结构化、体系化、结构分类</p>
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_knowledge_professional_preview.png', this)">
+                        <img class="default" src="assets/images/products/products_knowledge_professional_default.png">
+                        <img class="selected" src="assets/images/products/products_knowledge_professional_selected.png">
+                        <p class="caption">PGC专家知识课堂</p>
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_knowledge_shared_preview.png', this)">
+                        <img class="default" src="assets/images/products/products_knowledge_shared_default.png">
+                        <img class="selected" src="assets/images/products/products_knowledge_shared_selected.png">
+                        <p class="caption">知识共享库</p>
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_knowledge_video_preview.png', this)">
+                        <img class="default" src="assets/images/products/products_knowledge_video_default.png">
+                        <img class="selected" src="assets/images/products/products_knowledge_video_selected.png">
+                        <p class="caption">UGC氧育小视频</p>
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment preview product-preview">
+                    <img src="assets/images/products/products_knowledge_structural_preview.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ui segment analysis">
+        <a name="analysis">
+            <p class="title">
+                大数据分析
             </p>
-            <div class="item">
-                <img src="assets/images/home_promotion_qrcode.png">
-                <p class="footnote">
-                    扫一扫下载
-                </p>
+        </a>
+        <p class="description">
+            众多知识创造者与氧育一起见证
+        </p>
+        <div class="ui container product-content">
+            <div class="ui list product-list">
+                <div class="ui segment">
+                    <a class="active item product-item"
+                        onclick="onChangePreview('assets/images/products/products_analysis_photo_preview.png', this)">
+                        <p class="caption">视频图像数据分析</p>
+                        <img class="default" src="assets/images/products/products_analysis_photo_default.png">
+                        <img class="selected" src="assets/images/products/products_analysis_photo_selected.png">
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_analysis_organization_preview.png', this)">
+                        <p class="caption">机构决策数据分析</p>
+                        <img class="default" src="assets/images/products/products_analysis_organization_default.png">
+                        <img class="selected" src="assets/images/products/products_analysis_organization_selected.png">
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_analysis_location_preview.png', this)">
+                        <p class="caption">智能选址</p>
+                        <img class="default" src="assets/images/products/products_analysis_location_default.png">
+                        <img class="selected" src="assets/images/products/products_analysis_location_selected.png">
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment">
+                    <a class="normal item product-item"
+                        onclick="onChangePreview('assets/images/products/products_analysis_growth_preview.png', this)">
+                        <p class="caption">儿童成长数据分析</p>
+                        <img class="default" src="assets/images/products/products_analysis_growth_default.png">
+                        <img class="selected" src="assets/images/products/products_analysis_growth_selected.png">
+                        <div class="ui tiny progress" data-percent="1">
+                            <div class="bar">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="ui segment preview product-preview">
+                    <img src="assets/images/products/products_analysis_photo_preview.png">
+                </div>
             </div>
         </div>
     </div>
@@ -848,6 +677,12 @@
         $('#promotion').css("width", divWidth + "px");
         var promotionHeight = divWidth / 1920 * 603;
         $('#promotion').css("height", promotionHeight + "px");
+
+
+        onSuccessProgress(1, $('.sales .active.product-item').children(".progress"));
+        onSuccessProgress(1, $('.education .active.product-item').children(".progress"));
+        onSuccessProgress(1, $('.knowledge .active.product-item').children(".progress"));
+        onSuccessProgress(1, $('.analysis .active.product-item').children(".progress"));
     };
     window.onresize = function () {
         var browserWidth = document.body.clientWidth;
@@ -862,21 +697,29 @@
         $('#promotion').css("height", promotionHeight + "px");
     };
 
-    var commentPageNumber = 0;
-
-    function moveleft() {
-        // alert("haha");
-
-        // document.getElementById("comment").style.left = "-100%";
-
-        $("#comment").animate({
-            left: '-=' + $("#comment .item").width(),
-        }, function () {
-            commentPageNumber++;
-
-        })
+    function onSuccessProgress(index, element) {
+        element.progress({
+            duration: 3000,
+            percent: 100,
+            onSuccess: function (total) {
+                element.removeClass("success");
+                element.progress({ percent: 1 });
+                element.parent().removeClass("active");
+                element.parent().addClass("normal");
+                var superElements = element.parent().parent().parent().children(".ui.segment");
+                var elementCount = superElements.length - 1;
+                var nextElement = superElements.eq(index).children(".product-item");
+                nextElement.removeClass("normal");
+                nextElement.addClass("active");
+                nextElement.click();
+                onSuccessProgress(index + 1 < elementCount ? index + 1 : 0, nextElement.children(".progress"));
+            }
+        });
     }
 
+    function onChangePreview(imgURL, element) {
+        $(element).parent().parent().children(".product-preview").children("img").attr("src", imgURL);
+    }
 </script>
 
 </html>
