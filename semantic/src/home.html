@@ -38,7 +38,12 @@
             border-bottom-color: rgba(255, 255, 255, 0.2);
         }
 
-        .ui.secondary.pointing.menu .item {
+        .ui.secondary.pointing.menu .left.menu {
+            margin: auto;
+            margin-left: 0;
+        }
+
+        .ui.secondary.pointing.menu .right.menu .item {
             color: white;
             margin: 0.5px 0;
             min-width: 8rem;
@@ -143,6 +148,17 @@
             padding-bottom: 22.4em;
             padding-left: 3.4em;
         }
+
+        /* .ui.segment.profile .row .left,
+        .ui.segment.profile .row .right {
+            width: 12.5%;
+        }
+
+        .ui.segment.profile .row .first,
+        .ui.segment.profile .row .second,
+        .ui.segment.profile .row .third {
+            width: 25%;
+        } */
 
         .ui.segment.advantage .ui.grid {
             padding-top: 5.3em;
@@ -383,6 +399,14 @@
             margin-left: 0;
         }
 
+        .ui.vertical.footer.segment .three.wide.column {
+            margin-top: 1rem;
+        }
+
+        .ui.vertical.footer.segment .two.wide.column {
+            margin-right: 0;
+        }
+
         .ui.vertical.footer.segment h4 {
             font-weight: bold;
             font-size: 1rem;
@@ -415,6 +439,28 @@
             font-size: 0.8rem;
             color: #556467;
         }
+
+        .shortcut {
+            position: fixed;
+            bottom: 5rem;
+            right: 5rem;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .shortcut img {
+            margin: 0.8rem 0;
+        }
+
+        .shortcut img:hover {
+            cursor: pointer;
+        }
+
+        .shortcut img:nth-child(2) {
+            display: none;
+        }
     </style>
 
 <body>
@@ -422,6 +468,9 @@
     <div id="resizeDiv" class="banner background" style="height:100px; width:100px">
         <div class="ui secondary pointing menu">
             <div class="ui container">
+                <div class="left menu">
+                    <img src="assets/images/common/common_logo.png">
+                </div>
                 <div class="right menu">
                     <a class="active item">
                         首页
@@ -437,7 +486,7 @@
                             <a class="link item" href="./products.html#analysis">大数据分析</a>
                         </div>
                     </div>
-                    <a class="item">
+                    <a class="item" href="./about.html">
                         关于我们
                     </a>
                     <a class="item">
@@ -648,17 +697,16 @@
                 <div class="three wide column">
                     <h4 class="ui header">产品介绍</h4>
                     <div class="ui link list">
-                        <a href="#" class="item">氧育CRM</a>
-                        <a href="#" class="item">知识分享</a>
-                        <a href="#" class="item">大数据分析</a>
+                        <a class="link item" href="./products.html#sales">销售管理</a>
+                        <a class="link item" href="./products.html#education">教务管理</a>
+                        <a class="link item" href="./products.html#knowledge">知识分享</a>
+                        <a class="link item" href="./products.html#analysis">大数据分析</a>
                     </div>
                 </div>
                 <div class="three wide column">
                     <h4 class="ui header">关于我们</h4>
                     <div class="ui link list">
-                        <a href="#" class="item">Banana Pre-Order</a>
-                        <a href="#" class="item">DNA FAQ</a>
-                        <a href="#" class="item">How To Access</a>
+                        <a class="link item" href="./about.html#team">我们的团队</a>
                     </div>
                 </div>
                 <div class="two wide column">
@@ -670,6 +718,11 @@
                 武汉壹叁壹肆网络科技有限公司
             </p>
         </div>
+    </div>
+
+    <div class="shortcut">
+        <img src="assets/images/common/common_service.png">
+        <img id="shortcutBack" src="assets/images/common/common_back_top.png" onclick="onBackToTop()">
     </div>
 </body>
 
@@ -699,19 +752,19 @@
         $('#promotion').css("height", promotionHeight + "px");
     };
 
-    var commentPageNumber = 0;
+    window.onscroll = function () { scrollFunction() };
 
-    function moveleft() {
-        // alert("haha");
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("shortcutBack").style.display = "block";
+        } else {
+            document.getElementById("shortcutBack").style.display = "none";
+        }
+    }
 
-        // document.getElementById("comment").style.left = "-100%";
-
-        $("#comment").animate({
-            left: '-=' + $("#comment .item").width(),
-        }, function () {
-            commentPageNumber++;
-
-        })
+    function onBackToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
 
 </script>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Homepage - Semantic</title>
+
+    <link rel="stylesheet" type="text/css" href="../dist/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="../dist/semantic.min.js"></script>
+
+
+    <style type="text/css">
+        /* common */
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ui.container {
+            width: 100%;
+            padding: 0 12rem;
+        }
+
+        .ui.segment {
+            border: none;
+            box-shadow: none;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+        }
+
+        .title {
+            font-size: 3.1rem;
+            line-height: 4.4rem;
+            color: #556467;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.7rem;
+            color: #556467;
+        }
+
+        .caption {
+            font-size: 1.1rem;
+            color: #556467;
+            padding-bottom: 0.9rem;
+        }
+
+        .product-content {
+            padding-top: 3rem !important;
+        }
+
+
+        /* module */
+        .banner.background {
+            background-image: url("assets/images/about/about_banner_bg.png");
+            background-size: cover;
+        }
+
+        .ui.secondary.pointing.menu {
+            height: 6.6em;
+        }
+
+        .ui.secondary.pointing.menu {
+            border-bottom-width: 1px;
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .ui.secondary.pointing.menu .left.menu {
+            margin: auto;
+            margin-left: 0;
+        }
+
+        .ui.secondary.pointing.menu .right.menu .item {
+            color: white;
+            margin: 0.5px 0;
+            min-width: 8rem;
+            font-size: 1.1rem;
+            font-weight: normal;
+            font-stretch: normal;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom-width: 0.3rem;
+        }
+
+        .ui.secondary.pointing.menu .item:nth-child(3) {
+            border-bottom-color: white;
+        }
+
+        .ui.secondary.pointing.menu .button {
+            width: 8.3rem;
+            height: 2.9rem;
+            border-radius: 1.9rem;
+            color: white;
+            box-shadow: 0 0 0 1px;
+            margin-left: 3.6rem;
+        }
+
+        .ui.secondary.pointing.menu .button:hover {
+            background: white;
+            color: #00cddd;
+        }
+
+        .ui.secondary.pointing.menu .dropdown.item a {
+            color: white;
+        }
+
+        .ui.secondary.pointing.menu .dropdown.item .menu {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .ui.secondary.pointing.menu .dropdown.item .menu .item {
+            text-align: center;
+        }
+
+        .ui.secondary.pointing.menu .dropdown.item .menu .link.item:hover {
+            color: #00cddd !important;
+            background-color: #f2fafc !important;
+        }
+
+        .ui.secondary.pointing.menu .dropdown.item .menu .link.item:last-child {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .ui.container.banner {
+            margin-top: 8.8rem;
+        }
+
+        .ui.container.banner .title {
+            margin-bottom: 0.2rem;
+            color: white;
+        }
+
+        .ui.container.banner .description {
+            color: white;
+            max-width: 26.4rem;
+        }
+
+        /* sales */
+        /* .sales .list {
+            width: 18.2rem;
+        } */
+
+        .team .ui.grid {
+            padding-top: 5.3rem;
+            padding-bottom: 6.8rem;
+            max-width: 100em;
+            margin: auto;
+        }
+
+        .team .ui.grid .row.top {
+            padding-top: 0;
+            padding-bottom: 5em;
+        }
+
+        .team .ui.grid .row.bottom {
+            padding: 0;
+        }
+
+        .team .ui.grid .row .column {
+            text-align: center !important;
+        }
+
+        .team .ui.grid .row .column {
+            font-size: 1rem;
+            color: #556467;
+        }
+
+        .ui.vertical.footer.segment {
+            height: 24.5rem;
+            margin: 0;
+            border: none;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #556467;
+        }
+
+        .ui.vertical.footer.segment .ui.container {
+            max-width: 1200px !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ui.vertical.footer.segment .wide.column {
+            margin: auto;
+        }
+
+        .ui.vertical.footer.segment .four.wide.column {
+            margin-left: 0;
+        }
+
+        .ui.vertical.footer.segment .three.wide.column {
+            margin-top: 1rem;
+        }
+
+        .ui.vertical.footer.segment .two.wide.column {
+            margin-right: 0;
+        }
+
+        .ui.vertical.footer.segment h4 {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #556467;
+        }
+
+        .ui.vertical.footer.segment a {
+            font-size: 0.9rem;
+            color: #556467;
+            padding-top: 1.2rem;
+        }
+
+        .ui.vertical.footer.segment .wide.column .contact {
+            padding-top: 1.2rem;
+        }
+
+        .ui.vertical.footer.segment .two.wide.column {
+            text-align: center;
+            width: 146px;
+        }
+
+        .ui.vertical.footer.segment .two.wide.column p {
+            text-align: center;
+            width: 146px;
+        }
+
+        .ui.vertical.footer.segment .ui.container .footnote {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            color: #556467;
+        }
+
+        .shortcut {
+            position: fixed;
+            bottom: 5rem;
+            right: 5rem;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .shortcut img {
+            margin: 0.8rem 0;
+        }
+
+        .shortcut img:hover {
+            cursor: pointer;
+        }
+
+        .shortcut img:nth-child(2) {
+            display: none;
+        }
+    </style>
+
+<body>
+
+    <div id="resizeDiv" class="banner background" style="height:100px; width:100px">
+        <div class="ui secondary pointing menu">
+            <div class="ui container">
+                <div class="left menu">
+                    <img src="assets/images/common/common_logo.png">
+                </div>
+                <div class="right menu">
+                    <a class="item" href="./home.html">
+                        首页
+                    </a>
+                    <div class="ui simple dropdown item">
+                        <a class="text" href="./products.html">
+                            产品介绍
+                        </a>
+                        <div class="ui compact menu">
+                            <a class="link item" href="./products.html#sales">销售管理</a>
+                            <a class="link item" href="./products.html#education">教务管理</a>
+                            <a class="link item" href="./products.html#knowledge">知识分享</a>
+                            <a class="link item" href="./products.html#analysis">大数据分析</a>
+                        </div>
+                    </div>
+                    <a class="item">
+                        关于我们
+                    </a>
+                    <a class="item">
+                        <button class="ui basic button">申请入驻</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="ui container banner">
+            <p class="profile title">
+                嘿！欢迎来到氧育
+            </p>
+            <p class="profile description">
+                我们的目标很简单：将您的所有通信 - 您的电子邮件，聊天，电话，团队协作，任务，语音备注，所有内容 - 带到一个地方。这是您的团队一直在生产力和消息传递应用程序中寻找的，但更容易，而且都来自您的收件箱。
+                电子邮件仍然远远超过所有社交网络和消息应用程序 - 结合！它仍然是最常用于讨论业务，共享信息和管理繁忙日程的内容。
+                电子邮件正是我们开始的地方......
+            </p>
+        </div>
+    </div>
+
+
+    <div class="ui segment team">
+        <a name="team">
+            <p class="title">
+                我们的团队
+            </p>
+        </a>
+        <p class="description">
+            立即入驻，了解我们如何帮助您简化管理成本
+        </p>
+        <div class="ui equal width centered grid">
+            <div class="equal width centered row top">
+                <div class="column">
+                    <img src="assets/images/about/about_avatar_chief.png">
+                    <p>Lucas</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/about/about_avatar_manager.png">
+                    <p>余自瑞</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/about/about_avatar_product.png">
+                    <p>平亚洲</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/about/about_avatar_designer.png">
+                    <p>曹高杰</p>
+                </div>
+            </div>
+
+            <div class="equal width centered row bottom">
+                <div class="column">
+                    <img src="assets/images/about/about_avatar_backend.png">
+                    <p>覃明圆</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/about/about_avatar_android.png">
+                    <p>饶泽楷</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/about/about_avatar_ios.png">
+                    <p>王骏</p>
+                </div>
+                <div class="column">
+                    <img src="assets/images/about/about_avatar_operation.png">
+                    <p>清洁阿姨</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable equal height grid">
+                <div class="four wide column">
+                    <img src="assets/images/home_footer_logo.png">
+                    <div class="ui link list">
+                        <p class="contact">官方电话：400-0000-1111</p>
+                        <p class="contact">地址：关山大道保利国际中心</p>
+                        <p class="contact">邮箱：213748093@email.com</p>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui header">产品介绍</h4>
+                    <div class="ui link list">
+                        <a class="link item" href="./products.html#sales">销售管理</a>
+                        <a class="link item" href="./products.html#education">教务管理</a>
+                        <a class="link item" href="./products.html#knowledge">知识分享</a>
+                        <a class="link item" href="./products.html#analysis">大数据分析</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui header">关于我们</h4>
+                    <div class="ui link list">
+                        <a class="link item" href="#team">我们的团队</a>
+                    </div>
+                </div>
+                <div class="two wide column">
+                    <img src="assets/images/home_footer_qrcode.png">
+                    <p>微信公众号</p>
+                </div>
+            </div>
+            <p class="footnote">
+                武汉壹叁壹肆网络科技有限公司
+            </p>
+        </div>
+    </div>
+
+    <div class="shortcut">
+        <img src="assets/images/common/common_service.png">
+        <img id="shortcutBack" src="assets/images/common/common_back_top.png" onclick="onBackToTop()">
+    </div>
+</body>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var browserWidth = document.body.clientWidth;
+        var browserHeight = document.body.clientHeight;
+        var divWidth = browserWidth - 2;
+        var divHeight = divWidth / 16 * 9;
+        $('#resizeDiv').css("width", divWidth + "px");
+        $('#resizeDiv').css("height", divHeight + "px");
+    };
+    window.onresize = function () {
+        var browserWidth = document.body.clientWidth;
+        var browserHeight = document.body.clientHeight;
+        var divWidth = browserWidth - 2;
+        var divHeight = divWidth / 16 * 9;
+        $('#resizeDiv').css("width", divWidth + "px");
+        $('#resizeDiv').css("height", divHeight + "px");
+    };
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("shortcutBack").style.display = "block";
+        } else {
+            document.getElementById("shortcutBack").style.display = "none";
+        }
+    }
+
+    function onBackToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+</script>
+
+</html>

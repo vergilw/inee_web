@@ -139,7 +139,12 @@
             border-bottom-color: rgba(255, 255, 255, 0.2);
         }
 
-        .ui.secondary.pointing.menu .item {
+        .ui.secondary.pointing.menu .left.menu {
+            margin: auto;
+            margin-left: 0;
+        }
+
+        .ui.secondary.pointing.menu .right.menu .item {
             color: white;
             margin: 0.5px 0;
             min-width: 8rem;
@@ -296,6 +301,14 @@
             margin-left: 0;
         }
 
+        .ui.vertical.footer.segment .three.wide.column {
+            margin-top: 1rem;
+        }
+
+        .ui.vertical.footer.segment .two.wide.column {
+            margin-right: 0;
+        }
+
         .ui.vertical.footer.segment h4 {
             font-weight: bold;
             font-size: 1rem;
@@ -328,6 +341,28 @@
             font-size: 0.8rem;
             color: #556467;
         }
+
+        .shortcut {
+            position: fixed;
+            bottom: 5rem;
+            right: 5rem;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .shortcut img {
+            margin: 0.8rem 0;
+        }
+
+        .shortcut img:hover {
+            cursor: pointer;
+        }
+
+        .shortcut img:nth-child(2) {
+            display: none;
+        }
     </style>
 
 <body>
@@ -335,6 +370,9 @@
     <div id="resizeDiv" class="banner background" style="height:100px; width:100px">
         <div class="ui secondary pointing menu">
             <div class="ui container">
+                <div class="left menu">
+                    <img src="assets/images/common/common_logo.png">
+                </div>
                 <div class="right menu">
                     <a class="item" href="./home.html">
                         首页
@@ -348,7 +386,7 @@
                             <a class="link item" href="#analysis">大数据分析</a>
                         </div>
                     </div>
-                    <a class="item">
+                    <a class="item" href="./about.html">
                         关于我们
                     </a>
                     <a class="item">
@@ -384,7 +422,7 @@
             <div class="ui list product-list">
                 <div class="ui segment">
                     <a class="active item product-item"
-                        onclick="onChangePreview('assets/images/products/products_sales_programmed_preview.png', this)">
+                        onclick="onChangePreview('assets/images/products/products_sales_programmed_preview.gif', this)">
                         <img class="default" src="assets/images/products/products_sales_programmed_default.png">
                         <img class="selected" src="assets/images/products/products_sales_programmed_selected.png">
                         <p class="caption">销售移动化、网络化</p>
@@ -396,7 +434,7 @@
                 </div>
                 <div class="ui segment">
                     <a class="normal item product-item"
-                        onclick="onChangePreview('assets/images/products/products_sales_convenient_preview.png', this)">
+                        onclick="onChangePreview('assets/images/products/products_sales_convenient_preview.gif', this)">
                         <img class="default" src="assets/images/products/products_sales_convenient_default.png">
                         <img class="selected" src="assets/images/products/products_sales_convenient_selected.png">
                         <p class="caption">客户资源便捷录入</p>
@@ -408,7 +446,7 @@
                 </div>
                 <div class="ui segment">
                     <a class="normal item product-item"
-                        onclick="onChangePreview('assets/images/products/products_sales_shared_preview.png', this)">
+                        onclick="onChangePreview('assets/images/products/products_sales_shared_preview.gif', this)">
                         <img class="default" src="assets/images/products/products_sales_shared_default.png">
                         <img class="selected" src="assets/images/products/products_sales_shared_selected.png">
                         <p class="caption">异业资源共享</p>
@@ -420,7 +458,7 @@
                 </div>
                 <div class="ui segment">
                     <a class="normal item product-item"
-                        onclick="onChangePreview('assets/images/products/products_sales_msg_preview.png', this)">
+                        onclick="onChangePreview('assets/images/products/products_sales_msg_preview.gif', this)">
                         <img class="default" src="assets/images/products/products_sales_msg_default.png">
                         <img class="selected" src="assets/images/products/products_sales_msg_selected.png">
                         <p class="caption">消息、通知灵活发送</p>
@@ -431,7 +469,7 @@
                     </a>
                 </div>
                 <div class="ui segment preview product-preview">
-                    <img src="assets/images/products/products_sales_programmed_preview.png">
+                    <img src="assets/images/products/products_sales_programmed_preview.gif">
                 </div>
             </div>
         </div>
@@ -640,17 +678,16 @@
                 <div class="three wide column">
                     <h4 class="ui header">产品介绍</h4>
                     <div class="ui link list">
-                        <a href="#" class="item">氧育CRM</a>
-                        <a href="#" class="item">知识分享</a>
-                        <a href="#" class="item">大数据分析</a>
+                        <a class="link item" href="#sales">销售管理</a>
+                        <a class="link item" href="#education">教务管理</a>
+                        <a class="link item" href="#knowledge">知识分享</a>
+                        <a class="link item" href="#analysis">大数据分析</a>
                     </div>
                 </div>
                 <div class="three wide column">
                     <h4 class="ui header">关于我们</h4>
                     <div class="ui link list">
-                        <a href="#" class="item">Banana Pre-Order</a>
-                        <a href="#" class="item">DNA FAQ</a>
-                        <a href="#" class="item">How To Access</a>
+                        <a class="link item" href="./about.html#team">我们的团队</a>
                     </div>
                 </div>
                 <div class="two wide column">
@@ -663,6 +700,12 @@
             </p>
         </div>
     </div>
+
+    <div class="shortcut">
+        <img src="assets/images/common/common_service.png">
+        <img id="shortcutBack" src="assets/images/common/common_back_top.png" onclick="onBackToTop()">
+    </div>
+
 </body>
 
 <script type="text/javascript">
@@ -673,11 +716,6 @@
         var divHeight = divWidth / 16 * 9;
         $('#resizeDiv').css("width", divWidth + "px");
         $('#resizeDiv').css("height", divHeight + "px");
-
-        $('#promotion').css("width", divWidth + "px");
-        var promotionHeight = divWidth / 1920 * 603;
-        $('#promotion').css("height", promotionHeight + "px");
-
 
         onSuccessProgress(1, $('.sales .active.product-item').children(".progress"));
         onSuccessProgress(1, $('.education .active.product-item').children(".progress"));
@@ -691,10 +729,6 @@
         var divHeight = divWidth / 16 * 9;
         $('#resizeDiv').css("width", divWidth + "px");
         $('#resizeDiv').css("height", divHeight + "px");
-
-        $('#promotion').css("width", divWidth + "px");
-        var promotionHeight = divWidth / 1920 * 603;
-        $('#promotion').css("height", promotionHeight + "px");
     };
 
     function onSuccessProgress(index, element) {
@@ -720,6 +754,22 @@
     function onChangePreview(imgURL, element) {
         $(element).parent().parent().children(".product-preview").children("img").attr("src", imgURL);
     }
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("shortcutBack").style.display = "block";
+        } else {
+            document.getElementById("shortcutBack").style.display = "none";
+        }
+    }
+
+    function onBackToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
 </script>
 
 </html>
