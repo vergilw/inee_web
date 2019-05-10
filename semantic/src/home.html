@@ -20,7 +20,7 @@
 
     <style type="text/css">
         .banner.background {
-            background-image: url("assets/images/home_banner.png");
+            background-image: url("assets/images/home/home_banner.png");
             background-size: cover;
         }
 
@@ -195,13 +195,17 @@
             border: solid 0.1rem #c0c8ca;
         }
 
+        .ui.segment.advantage a .more {
+            color: #556467;
+        }
+
         .ui.segment.comment {
-            background-image: url("assets/images/home_comment_bg.png");
+            background-image: url("assets/images/home/home_comment_bg.png");
             padding: 0;
             margin: 0;
             border: none;
             text-align: center;
-            height: 41.1rem;
+            /* height: 41.1rem; */
 
         }
 
@@ -223,7 +227,7 @@
         .ui.segment.comment .gallery.js-flickity {
             margin: 0 10rem;
             text-align: center;
-
+            padding-bottom: 5.6rem;
             /* width: 700px; */
 
             /* overflow: hidden; */
@@ -244,18 +248,24 @@
             float: left;
             font-size: 1.1rem;
             color: #ffffff;
-            padding-top: 5.1rem;
+            padding-top: 3.1rem;
+
+        }
+
+        .ui.segment.comment .gallery.js-flickity .gallery-cell .content {
+            max-width: 44rem;
+            margin: auto;
         }
 
         .ui.segment.comment .gallery.js-flickity .gallery-cell .quote {
-            padding-top: 2.3rem;
+            padding-top: 3.0rem;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
 
         .ui.segment.comment .gallery.js-flickity .gallery-cell .avatar {
-            border: solid 0.3rem #ffffff;
+            /* border: solid 0.3rem #ffffff; */
             width: 5rem;
             height: 5rem;
             margin-top: 2.3rem;
@@ -311,37 +321,21 @@
 
         .ui.segment.partner .ui.grid {
             padding-top: 5.3em;
-            max-width: 100em;
+            max-width: 100rem;
             margin: auto;
             padding-bottom: 4.8em;
         }
 
-        .ui.segment.partner .ui.grid .row {
+        /* .ui.segment.partner .ui.grid .row {
             padding: 0;
-        }
+        } */
 
         .ui.segment.partner .ui.grid .row .column {
             text-align: center;
         }
 
-        .ui.segment.partner .ui.grid .row .column .item {
-            margin: auto;
-            width: 17em;
-            height: 10.4em;
-            box-shadow: 0rem 1rem 2.2rem 0rem rgba(0, 34, 34, 0.05);
-            border-radius: 1.9rem;
-            border: solid 0.1rem #f3f4f6;
-        }
-
-        .ui.segment.partner .ui.grid .row .column .item:first-child {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
         .ui.segment.promotion {
-            background-image: url("assets/images/home_promotion.png");
+            background-image: url("assets/images/home/home_promotion.png");
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -397,6 +391,10 @@
 
         .ui.vertical.footer.segment .four.wide.column {
             margin-left: 0;
+        }
+
+        .ui.vertical.footer.segment .four.wide.column p {
+            margin: 0;
         }
 
         .ui.vertical.footer.segment .three.wide.column {
@@ -480,8 +478,7 @@
                             产品介绍
                         </a>
                         <div class="ui compact menu">
-                            <a class="link item" href="./products.html#sales">销售管理</a>
-                            <a class="link item" href="./products.html#education">教务管理</a>
+                            <a class="link item" href="./products.html#sales">氧育SAAS</a>
                             <a class="link item" href="./products.html#knowledge">知识分享</a>
                             <a class="link item" href="./products.html#analysis">大数据分析</a>
                         </div>
@@ -506,11 +503,11 @@
             操作简单/数据化精准运营/家校一体服务
         </p>
         <div class="row">
-            <img class="left" src="assets/images/home_profile_cloud.png">
-            <img class="first" src="assets/images/home_profile_organization.png">
-            <img class="second" src="assets/images/home_profile_application.png">
-            <img class="third" src="assets/images/home_profile_family.png">
-            <img class="right" src="assets/images/home_profile_cloud.png">
+            <img class="left" src="assets/images/home/home_profile_cloud.png">
+            <img class="first" src="assets/images/home/home_profile_organization.png">
+            <img class="second" src="assets/images/home/home_profile_application.png">
+            <img class="third" src="assets/images/home/home_profile_family.png">
+            <img class="right" src="assets/images/home/home_profile_cloud.png">
         </div>
     </div>
 
@@ -524,51 +521,51 @@
         <div class="ui equal width centered grid">
             <div class="equal width centered row top">
                 <div class="column">
-                    <img src="assets/images/home_advantage_sales.png">
+                    <img src="assets/images/home/home_advantage_sales.png">
                     <p>移动销售CRM</p>
                 </div>
                 <div class="column">
-                    <img src="assets/images/home_advantage_schedule.png">
+                    <img src="assets/images/home/home_advantage_schedule.png">
                     <p>家园课程表</p>
                 </div>
                 <div class="column">
-                    <img src="assets/images/home_advantage_punch.png">
+                    <img src="assets/images/home/home_advantage_punch.png">
                     <p>智能签到考勤</p>
                 </div>
                 <div class="column">
-                    <img src="assets/images/home_advantage_share.png">
+                    <img src="assets/images/home/home_advantage_share.png">
                     <p>异业流量共享</p>
                 </div>
                 <div class="column">
-                    <img src="assets/images/home_advantage_knowledge.png">
+                    <img src="assets/images/home/home_advantage_knowledge.png">
                     <p>PGC系统化知识分享</p>
                 </div>
             </div>
 
             <div class="equal width centered row bottom">
                 <div class="column">
-                    <img src="assets/images/home_advantage_video.png">
+                    <img src="assets/images/home/home_advantage_video.png">
                     <p>UGC趣味视频</p>
                 </div>
                 <div class="column">
-                    <img src="assets/images/home_advantage_camera.png">
+                    <img src="assets/images/home/home_advantage_camera.png">
                     <p>多摄像头联动识别</p>
                 </div>
                 <div class="column">
-                    <img src="assets/images/home_advantage_data.png">
+                    <img src="assets/images/home/home_advantage_data.png">
                     <p>成长大数据分析</p>
                 </div>
                 <div class="column">
-                    <img src="assets/images/home_advantage_location.png">
+                    <img src="assets/images/home/home_advantage_location.png">
                     <p>园区智能选址</p>
                 </div>
                 <div class="column">
-                    <img src="assets/images/home_advantage_analysis.png">
+                    <img src="assets/images/home/home_advantage_analysis.png">
                     <p>园区盈亏分析</p>
                 </div>
             </div>
         </div>
-        <button class="ui basic button left">查看更多</button>
+        <a href="./products.html"><button class="ui basic button more">查看更多</button></a>
     </div>
 
     <div class="ui segment comment">
@@ -579,69 +576,45 @@
             您的评语，是对我们最大的肯定
         </p>
 
-        <!-- <div class="item list">
-            <ul id="comment">
-                <li class="item">
-                    <p class="content">
-                        123
-                    </p>
-                    <img class="quote" src="assets/images/home_comment_quote.png">
-                    <img class="avatar" src="assets/images/home_comment_quote.png">
-                    <p class="name">
-                        橙子老师
-                    </p>
-                    <p class="tag">
-                        育儿专家/全职太太
-                    </p>
-                </li>
-                <li class="item">
-                    <p class="content">
-                        456
-                    </p>
-                    <img class="quote" src="assets/images/home_comment_quote.png">
-                    <img class="avatar" src="assets/images/home_comment_quote.png">
-                    <p class="name">
-                        橙子老师
-                    </p>
-                    <p class="tag">
-                        育儿专家/全职太太
-                    </p>
-                </li>
-            </ul>
-        </div>
-        <button class="ui button left" onclick="moveleft()">
-            <img src="assets/images/home_comment_left.png">
-        </button>
-        <button class="ui button right" onclick="moveleft()">
-            <img src="assets/images/home_comment_right.png">
-        </button> -->
-
         <div class="gallery js-flickity"
-            data-flickity-options='{ "cellAlign": "left", "contain": true, "pageDots": false}'>
+            data-flickity-options='{ "cellAlign": "left", "contain": true, "pageDots": false, "wrapAround": true, "autoPlay": true}'>
             <div class="gallery-cell">
                 <p class="content">
-                    123
+                    这是一个我们园区老师都爱用的系统，在氧育上面，不仅可以更好的开展园区工作，还可以获取早教知识，以及分享生活、工作中的趣味小视频，更重要的是为我们分园在选址方面提供数据参考，真是一举多得的早幼教系统。
                 </p>
-                <img class="quote" src="assets/images/home_comment_quote.png">
-                <img class="avatar" src="assets/images/home_comment_quote.png">
+                <img class="quote" src="assets/images/home/home_comment_quote.png">
+                <img class="avatar" src="assets/images/home/home_comment_avatar_mxq.png">
                 <p class="name">
-                    橙子老师
+                    马小庆
                 </p>
                 <p class="tag">
-                    育儿专家/全职太太
+                    哈沐德国际早教品牌创始人
                 </p>
             </div>
             <div class="gallery-cell">
                 <p class="content">
-                    456
+                    氧育CRM不仅方便了我的工作，同时还能线上学习到更多早幼教相关知识，从宝宝饭食、到宝宝心理变化等，助力我的工作更加得心应手。
                 </p>
-                <img class="quote" src="assets/images/home_comment_quote.png">
-                <img class="avatar" src="assets/images/home_comment_quote.png">
+                <img class="quote" src="assets/images/home/home_comment_quote.png">
+                <img class="avatar" src="assets/images/home/home_comment_avatar_fxy.png">
                 <p class="name">
-                    橙子老师
+                    冯欣源
                 </p>
                 <p class="tag">
-                    育儿专家/全职太太
+                    复旦大学社会心理学博士后，北京大学医学博士，两个孩子的妈妈
+                </p>
+            </div>
+            <div class="gallery-cell">
+                <p class="content">
+                    孩子上早幼教机构，签到、课时扣除总是较繁琐、理不清。有了氧育，上课签到一键扫码，课时变更实时通知，让我们更加放心。
+                </p>
+                <img class="quote" src="assets/images/home/home_comment_quote.png">
+                <img class="avatar" src="assets/images/home/home_comment_avatar_xx.png">
+                <p class="name">
+                    谢璇
+                </p>
+                <p class="tag">
+                    武汉大学MPAcc硕士、华人家庭治疗师、国家二级咨询师、菩萱德创始人兼首席心理咨询师
                 </p>
             </div>
         </div>
@@ -658,11 +631,47 @@
             <div class="equal width centered row top">
                 <div class="column">
                     <div class="item">
-                        <img src="assets/images/home_partner_hamood.png">
+                        <img src="assets/images/home/home_partner_wh_university.png">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="item">
+                        <img src="assets/images/home/home_partner_kaye.png">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="item">
+                        <img src="assets/images/home/home_partner_nursery_industry.png">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="item">
+                        <img src="assets/images/home/home_partner_hamood.png">
                     </div>
                 </div>
             </div>
-
+            <div class="equal width centered row bottom">
+                <div class="column">
+                    <div class="item">
+                        <img src="assets/images/home/home_partner_zixu.png">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="item">
+                        <img src="assets/images/home/home_partner_hong_zheng.png">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="item">
+                        <img src="assets/images/home/home_partner_senlinhu.png">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="item">
+                        <img src="assets/images/home/home_partner_joy_baby.png">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -675,7 +684,7 @@
                 赶快扫码下载氧育App，发现更多精彩内容
             </p>
             <div class="item">
-                <img src="assets/images/home_promotion_qrcode.png">
+                <img src="assets/images/home/home_promotion_qrcode.png">
                 <p class="footnote">
                     扫一扫下载
                 </p>
@@ -687,18 +696,17 @@
         <div class="ui container">
             <div class="ui stackable equal height grid">
                 <div class="four wide column">
-                    <img src="assets/images/home_footer_logo.png">
+                    <img src="assets/images/home/home_footer_logo.png">
                     <div class="ui link list">
-                        <p class="contact">官方电话：400-0000-1111</p>
-                        <p class="contact">地址：关山大道保利国际中心</p>
-                        <p class="contact">邮箱：213748093@email.com</p>
+                        <p class="contact">官方电话：027-87775828</p>
+                        <p class="contact">地址：湖北省武汉市关山大道保利国际公寓B栋1326室</p>
+                        <p class="contact">邮箱：otof@1314-edu.com</p>
                     </div>
                 </div>
                 <div class="three wide column">
                     <h4 class="ui header">产品介绍</h4>
                     <div class="ui link list">
-                        <a class="link item" href="./products.html#sales">销售管理</a>
-                        <a class="link item" href="./products.html#education">教务管理</a>
+                        <a class="link item" href="./products.html#sales">氧育SAAS</a>
                         <a class="link item" href="./products.html#knowledge">知识分享</a>
                         <a class="link item" href="./products.html#analysis">大数据分析</a>
                     </div>
@@ -710,7 +718,7 @@
                     </div>
                 </div>
                 <div class="two wide column">
-                    <img src="assets/images/home_footer_qrcode.png">
+                    <img src="assets/images/home/home_footer_qrcode.png">
                     <p>微信公众号</p>
                 </div>
             </div>
