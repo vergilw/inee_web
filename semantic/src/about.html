@@ -110,8 +110,10 @@
         }
 
         .ui.secondary.pointing.menu .button:hover {
-            background: white;
-            color: #00cddd;
+            background-image: linear-gradient(0deg,
+                #ffa500 0%,
+                #f7c71c 100%);
+            box-shadow: none;
         }
 
         .ui.secondary.pointing.menu .dropdown.item a {
@@ -261,18 +263,27 @@
 
             display: flex;
             flex-direction: column;
+            align-items: flex-end;
         }
 
-        .shortcut img {
+        .shortcut .service {
             margin: 0.8rem 0;
+            box-shadow: 0rem 1rem 2.2rem 0rem rgba(255, 148, 0, 0.28);
+            border-radius: 33px;
         }
 
         .shortcut img:hover {
             cursor: pointer;
         }
 
-        .shortcut img:nth-child(2) {
+        .shortcut .service:hover {
+            content: url("assets/images/common/common_service_hover.png")
+        }
+
+        .shortcut .back img {
             display: none;
+            box-shadow: 0rem 1rem 2.2rem 0rem rgba(0, 34, 34, 0.05);
+            border-radius: 33px;
         }
     </style>
 
@@ -312,9 +323,10 @@
                 嘿！欢迎来到氧育
             </p>
             <p class="profile description">
-                我们的目标很简单：将您的所有通信 - 您的电子邮件，聊天，电话，团队协作，任务，语音备注，所有内容 - 带到一个地方。这是您的团队一直在生产力和消息传递应用程序中寻找的，但更容易，而且都来自您的收件箱。
-                电子邮件仍然远远超过所有社交网络和消息应用程序 - 结合！它仍然是最常用于讨论业务，共享信息和管理繁忙日程的内容。
-                电子邮件正是我们开始的地方......
+                武汉壹叁壹肆教育科技有限公司是一家服务早幼教行业及相关人群的互联网企业，通过机构智能管理平台、早幼教知识体系、儿童成长数据评估报告，全面助力早幼教行业健康发展。
+            </p>
+            <p class="profile description">
+                公司核心团队由武汉大学精英校友组成，他们曾在早幼教育、互联网、传媒、文化传播等行业深耕多年，积累了丰富的行业经验，帮助早幼教机构快速提升工作效率、提升运营效率、促进机构更好的实现智能化管理。
             </p>
         </div>
     </div>
@@ -407,8 +419,10 @@
     </div>
 
     <div class="shortcut">
-        <img src="assets/images/common/common_service.png">
-        <img id="shortcutBack" src="assets/images/common/common_back_top.png" onclick="onBackToTop()">
+        <img class="service" src="assets/images/common/common_service.png">
+        <div class="back">
+            <img id="shortcutBack" src="assets/images/common/common_back_top.png" onclick="onBackToTop()">
+        </div>
     </div>
 </body>
 
