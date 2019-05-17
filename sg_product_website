@@ -1,22 +1,22 @@
 server {
-        listen 81;
-        listen [::]:81;
+        listen 80;
+        listen [::]:80;
 
-        server_name 192.168.6.114;
+        server_name http://yangyu_staging.1314-edu.com;
 
         location /home {
-            proxy_pass http://192.168.6.114:8081/src/home;
+            proxy_pass http://localhost:8081/src/home;
         }
 
         location /products {
-            proxy_pass http://192.168.6.114:8081/src/products;
+            proxy_pass http://localhost:8081/src/products;
         }
 
         location /about {
-            proxy_pass http://192.168.6.114:8081/src/about;
+            proxy_pass http://localhost:8081/src/about;
         }   
 
         location ~ .*\.(gif|jpg|jpeg|png|css|js|ico)$ {
-         	proxy_pass http://192.168.6.114:8081;
+         	proxy_pass http://localhost:8081;
      	}
 }
