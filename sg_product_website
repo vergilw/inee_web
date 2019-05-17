@@ -1,0 +1,22 @@
+server {
+        listen 81;
+        listen [::]:81;
+
+        server_name 192.168.6.114;
+
+        location /home {
+            proxy_pass http://192.168.6.114:8081/src/home;
+        }
+
+        location /products {
+            proxy_pass http://192.168.6.114:8081/src/products;
+        }
+
+        location /about {
+            proxy_pass http://192.168.6.114:8081/src/about;
+        }   
+
+        location ~ .*\.(gif|jpg|jpeg|png|css|js|ico)$ {
+         	proxy_pass http://192.168.6.114:8081;
+     	}
+}
