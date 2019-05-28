@@ -1,0 +1,26 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+        server_name yangyu_staging.1314-edu.com;
+
+        location / {
+            proxy_pass http://localhost:8081/src/home;
+        }
+
+        location /home {
+            proxy_pass http://localhost:8081/src/home;
+        }
+
+        location /products {
+            proxy_pass http://localhost:8081/src/products;
+        }
+
+        location /about {
+            proxy_pass http://localhost:8081/src/about;
+        }   
+
+        location ~ .*\.(gif|jpg|jpeg|png|css|js|ico)$ {
+         	proxy_pass http://localhost:8081;
+     	}
+}

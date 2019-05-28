@@ -21,5 +21,8 @@
   "homepage": "https://github.com/vergilw/inee_web#readme",
   "dependencies": {
     "fomantic-ui": "^2.7.4"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
   }
 }
