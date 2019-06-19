@@ -25,73 +25,23 @@
 <body>
     <div class="ui container">
         <div class="ui grid">
-            <div class="three wide column">
+            <div id="menu" class="three wide column">
                 <div class="ui vertical pointing menu">
-                    <a class="item active">
-                        1. 新用户注册账号、新建早教机构
-                    </a>
-                    <a class="item">
-                        2. 园区基本资料编辑、部门配置、员工录入
-                    </a>
-                    <a class="item">
-                        3. 机构新建多个分部/分园区
-                    </a>
-                    <a class="item">
-                        4. 新建流水线、新建客户数据、实现客户数据跟进
-                    </a>
-                    <a class="item">
-                        5. 配置园区会员卡
-                    </a>
-                    <a class="item">
-                        6. 客户完成购卡流程
-                    </a>
-                    <a class="item">
-                        7. 新建班级、会员分班
-                    </a>
-                    <a class="item">
-                        8. 教务课程排课
-                    </a>
+                    <menu-list v-for="item in menuList" v-bind:key="item.id" v-bind:tag="item.tag"
+                        v-bind:title="item.title">
+                    </menu-list>
                 </div>
             </div>
 
-            <div class="twelve wide stretched column">
+            <div id="content" class="twelve wide stretched column">
                 <div class="ui segment content">
-                    <div class="ui container">
-                        <div class="header">新用户注册账号、新建早教机构</div>
-                        <div class="subheader">
-                            <div class="container">
-                                用户可通过注册/登录流程创建属于自己的氧育SaaS帐号，且在登录成功之后，系统支持用户创建园区机构。对于加盟园或集团园，支持总部-分部模式，方便各级分层管理。</div>
-                        </div>
-                        <div class="ui list">
-                            <div class="item">
-                                <div class="ui teal circular horizontal label">1</div>
-                                新用户通过浏览器输入：http://sg_staging.1314-edu.com/sign，输入账号（手机号或邮箱点击下一步）+
-                                验证码（手机验证码为短信，邮箱验证码需登录邮箱查看）
-                                +
-                                设置登录密码（确认新密码）完成注册，进入web端个人中心。
-                            </div>
-                            <div class="item">
-                                <div class="ui teal circular horizontal label">2</div>
-                                进入“我的工作台”，将自己的账号添加到“申请为职员”。
-                            </div>
-                            <div class="item">
-                                <div class="ui teal circular horizontal label">3</div>
-                                新建新机构，且点击后进入新建的机构后台。
-                            </div>
-                        </div>
-
-                        <div class="footer">
-                            具体的操作视频如下：
-                        </div>
-                        <!-- <video controls width="250"> -->
-                            <!-- <source src="http://cloud.1314-edu.com/0wm_1Yc3UxMJ1Ryh7gBxXxKgF6f7" type="video/mp4"> -->
-                        <!-- </video> -->
-                        <div class="ui embed" data-url="http://cloud.1314-edu.com/0wm_1Yc3UxMJ1Ryh7gBxXxKgF6f7"
-                            data-placeholder="/images/bear-waving.jpg"></div>
-                            
-                    </div>
+                    <guide-list v-for="item in guideList" v-bind:key="item.id" v-bind:tag="item.tag"
+                        v-bind:title="item.title" v-bind:headnote="item.headnote" v-bind:steps="item.steps"
+                        v-bind:video_src="item.video_src" v-bind:video_placeholder="item.video_placeholder">
+                    </guide-list>
                 </div>
             </div>
+
         </div>
 
     </div>
@@ -99,20 +49,130 @@
 </body>
 
 <script type="text/javascript">
-    window.onload = function () {
-        $('.ui.embed').embed();
-    }
-    
+    // import {data} from './guide.json';
 
-    Vue.component('button-counter', {
-        data: function () {
-            return {
-                count: 0
-            }
-        },
-        template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    $().ready(function () {
+        $('.ui.embed').embed();
     })
 
+    // $(window).scroll(function () {
+    //     var hT = $('#scroll-to').offset().top,
+    //         hH = $('#scroll-to').outerHeight(),
+    //         wH = $(window).height(),
+    //         wS = $(this).scrollTop();
+    //     if (wS > (hT + hH - wH)) {
+    //         console.log('H1 on the view!');
+    //     }
+    // });
+
+    Vue.component('menu-list', {
+        props: {
+            tag: String,
+            title: String
+        },
+        template: "<a :href=\"tag\" class=\"item\"> {{ title }} </a>"
+    })
+
+    Vue.component('guide-list', {
+        props: {
+            tag: String,
+            title: String,
+            headnote: String,
+            steps: Array,
+            video_src: String,
+            video_placeholder: String
+        },
+        template: "<div class=\"ui container\">\
+                        <div class=\"header\"><a :name=\"tag\"> {{ title }} </a></div>\
+                        <div class=\"headnote\">\
+                            <div class=\"container\">\
+                                {{ headnote }} \
+                            </div>\
+                        </div>\
+                        <div class=\"ui list\">\
+                            <div class=\"item\" v-for=\"(step, index) in steps\">\
+                                <div class=\"ui teal circular horizontal label\">{{ index+1 }}</div>\
+                                {{ step }}\
+                            </div>\
+                        </div>\
+                        <div class=\"footer\">\
+                            具体的操作视频如下：\
+                        </div>\
+                        <div class=\"ui embed\" :data-url=\"video_src\" :data-placeholder=\"video_placeholder\"></div>\
+                    </div>"
+    })
+
+    
+
+    new Vue({
+        el: '#menu',
+        data: {
+            menuList: [
+                {
+                    id: 0,
+                    tag: "sign_up",
+                    title: "新用户注册账号、新建早教机构",
+                    headnote: "用户可通过注册/登录流程创建属于自己的氧育SaaS帐号，且在登录成功之后，系统支持用户创建园区机构。对于加盟园或集团园，支持总部-分部模式，方便各级分层管理。",
+                    steps: [
+                        "新用户通过浏览器输入：http://sg_staging.1314-edu.com/sign，输入账号（手机号或邮箱点击下一步）+ 验证码（手机验证码为短信，邮箱验证码需登录邮箱查看） + 设置登录密码（确认新密码）完成注册，进入web端个人中心。",
+                        "进入“我的工作台”，将自己的账号添加到“申请为职员”。",
+                        "新建新机构，且点击后进入新建的机构后台。"
+                    ],
+                    video_src: "http://cloud.1314-edu.com/0wm_1Yc3UxMJ1Ryh7gBxXxKgF6f7",
+                    video_placeholder: "assets/images/guide/guide_sign_up.png"
+                },
+                {
+                    id: 1,
+                    tag: "import",
+                    title: "园区基本资料编辑、部门配置、员工录入",
+                    headnote: "用户可通过注册/登录流程创建属于自己的氧育SaaS帐号，且在登录成功之后，系统支持用户创建园区机构。对于加盟园或集团园，支持总部-分部模式，方便各级分层管理。",
+                    steps: [
+                        "进入园区SAAS系统。",
+                        "点击左侧目录“人力资源管理->本机构->点击编辑按钮”在弹窗中编辑本机构的基本信息。",
+                        "点击左侧目录“人力资源管理->部门”添加配置本机构的部门、职称。",
+                        "点击左侧目录“人力资源管理->员工管理”录入园区的员工信息、配置员工任职部门、职称和后台管理员、老师权限。"
+                    ],
+                    video_src: "http://cloud.1314-edu.com/0wm_1Yc3UxMJ1Ryh7gBxXxKgF6f7",
+                    video_placeholder: "assets/images/guide/guide_sign_up.png"
+                }
+            ]
+        }
+    })
+
+    new Vue({
+        el: '#content',
+        data: {
+            guideList: [
+                {
+                    id: 0,
+                    tag: "sign_up",
+                    title: "新用户注册账号、新建早教机构",
+                    headnote: "用户可通过注册/登录流程创建属于自己的氧育SaaS帐号，且在登录成功之后，系统支持用户创建园区机构。对于加盟园或集团园，支持总部-分部模式，方便各级分层管理。",
+                    steps: [
+                        "新用户通过浏览器输入：http://sg_staging.1314-edu.com/sign，输入账号（手机号或邮箱点击下一步）+ 验证码（手机验证码为短信，邮箱验证码需登录邮箱查看） + 设置登录密码（确认新密码）完成注册，进入web端个人中心。",
+                        "进入“我的工作台”，将自己的账号添加到“申请为职员”。",
+                        "新建新机构，且点击后进入新建的机构后台。"
+                    ],
+                    video_src: "http://cloud.1314-edu.com/0wm_1Yc3UxMJ1Ryh7gBxXxKgF6f7",
+                    video_placeholder: "assets/images/guide/guide_sign_up.png"
+                },
+                {
+                    id: 1,
+                    tag: "import",
+                    title: "园区基本资料编辑、部门配置、员工录入",
+                    headnote: "用户可通过注册/登录流程创建属于自己的氧育SaaS帐号，且在登录成功之后，系统支持用户创建园区机构。对于加盟园或集团园，支持总部-分部模式，方便各级分层管理。",
+                    steps: [
+                        "进入园区SAAS系统。",
+                        "点击左侧目录“人力资源管理->本机构->点击编辑按钮”在弹窗中编辑本机构的基本信息。",
+                        "点击左侧目录“人力资源管理->部门”添加配置本机构的部门、职称。",
+                        "点击左侧目录“人力资源管理->员工管理”录入园区的员工信息、配置员工任职部门、职称和后台管理员、老师权限。"
+                    ],
+                    video_src: "http://cloud.1314-edu.com/0wm_1Yc3UxMJ1Ryh7gBxXxKgF6f7",
+                    video_placeholder: "assets/images/guide/guide_sign_up.png"
+                }
+            ]
+        },
+    })
 </script>
 
 </html>

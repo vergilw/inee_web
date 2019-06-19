@@ -1,14 +1,30 @@
 
 body {
     background-color: #00cddd;
-    font-family: PingFang-SC-Regular;
+    font-family: PingFangSC-Regular, sans-serif, Microsoft YaHei;
     letter-spacing: .05em;
+    color: rgba(34, 34, 34, 1);
 }
 
-.menu {
+.three.wide.column {
+    margin-right: 20px;
+}
+
+.ui.vertical.menu {
     box-shadow: 0px 8px 7px 0px 
 		rgba(52, 57, 61, 0.11);
-	border-radius: 8px;
+    border-radius: 8px;
+}
+
+.ui.vertical.menu .item {
+    padding: 30px 25px;
+    font-family: PingFangSC-Medium;
+	font-size: 16px;
+}
+
+.ui.vertical.menu .item.active {
+    background-color: rgba(0, 205, 221, 0.06);
+    color: rgba(0, 205, 221, 1);
 }
 
 .ui.segment.content {
@@ -25,17 +41,22 @@ body {
 .content .header {
     font-family: PingFangSC-Semibold;
     font-size: 22px;
-    margin-bottom: 17px;
+    padding-bottom: 17px;
 }
 
-.content .subheader {
+.content a {
+    color: rgba(34, 34, 34, 1);
+}
+
+.content .headnote {
     background-color: rgba(247, 248, 252, 1);
     border-radius: 8px;
     font-size: 16px;
+    font-family: PingFangSC-Light, sans-serif;
     color: rgba(153, 153, 153, 1);
 }
 
-.content .subheader .container {
+.content .headnote .container {
     padding: 22px 50px;
 }
 
@@ -46,6 +67,7 @@ body {
 
 .content .ui.list .item {
     padding-bottom: 26px;
+    /* font-family: PingFang-SC-Regular; */
     font-size: 16px;
     line-height: 24px;
 }
@@ -55,5 +77,6 @@ body {
     font-family: PingFangSC-Semibold;
 	font-size: 16px;
 	line-height: 28px;
-	color: rgba(34, 34, 34, 1);
+    color: rgba(34, 34, 34, 1);
+    padding-bottom: 25px;
 }
