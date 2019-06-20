@@ -1,7 +1,7 @@
 [
     {
         "id": 0,
-        "tag": "sign_up",
+        "tag": "sign",
         "title": "新用户注册账号、新建早教机构",
         "headnote": "用户可通过注册/登录流程创建属于自己的氧育SaaS帐号，且在登录成功之后，系统支持用户创建园区机构。对于加盟园或集团园，支持总部-分部模式，方便各级分层管理。",
         "steps": [
@@ -9,21 +9,97 @@
             "进入“我的工作台”，将自己的账号添加到“申请为职员”。",
             "新建新机构，且点击后进入新建的机构后台。"
         ],
-        "video_src": "http://cloud.1314-edu.com/0wm_1Yc3UxMJ1Ryh7gBxXxKgF6f7",
-        "video_placeholder": "assets/images/guide/guide_sign_up.png"
+        "video_src": "http://sg-production.1314-edu.com/video/guide/sign.mp4",
+        "video_placeholder": "http://sg-production.1314-edu.com/image/guide/sign.png"
     },
     {
         "id": 1,
-        "tag": "import",
+        "tag": "profile",
         "title": "园区基本资料编辑、部门配置、员工录入",
-        "headnote": "用户可通过注册/登录流程创建属于自己的氧育SaaS帐号，且在登录成功之后，系统支持用户创建园区机构。对于加盟园或集团园，支持总部-分部模式，方便各级分层管理。",
         "steps": [
             "进入园区SAAS系统。",
             "点击左侧目录“人力资源管理->本机构->点击编辑按钮”在弹窗中编辑本机构的基本信息。",
             "点击左侧目录“人力资源管理->部门”添加配置本机构的部门、职称。",
             "点击左侧目录“人力资源管理->员工管理”录入园区的员工信息、配置员工任职部门、职称和后台管理员、老师权限。"
         ],
-        "video_src": "http://cloud.1314-edu.com/0wm_1Yc3UxMJ1Ryh7gBxXxKgF6f7",
-        "video_placeholder": "assets/images/guide/guide_sign_up.png"
+        "video_src": "http://sg-production.1314-edu.com/video/guide/sign.mp4",
+        "video_placeholder": "http://sg-production.1314-edu.com/image/guide/profile.png"
+    },
+    {
+        "id": 2,
+        "tag": "department",
+        "title": "机构新建多个分部/分园区",
+        "steps": [
+            "氧育SAAS系统中，在组织管理 -> 区域界面内点击“添加”按钮，新建分部/分园区。",
+            "点击分部/园区列表中“教室”按钮，为分园区配置对应教室。"
+        ],
+        "video_src": "http://sg-production.1314-edu.com/video/guide/sign.mp4",
+        "video_placeholder": "http://sg-production.1314-edu.com/image/guide/department.png"
+    },
+    {
+        "id": 3,
+        "tag": "sale",
+        "title": "新建流水线、新建客户数据、实现客户数据跟进",
+        "headnote": "流水线指机构内用户信息根据录入员时匹配的流水线上配置的部门及员工进行流通。",
+        "steps": [
+            "后台系统左侧目录“市场管理-> 流水线”新建流水线。",
+            "在新建的流水线上点击“成员管理”配置你期望达到的用户数据流转对应的部门、人员。",
+            "点击左侧导航栏中“我的客户”，进行新客户的录入，且匹配对应的流水线。",
+            "在“我的客户”列表中点击列表“移交”按钮实现数据流转。",
+            "登录流水线下一级对应职员账号，“进入后台->市场管理->待分配客户->点击接收”将流转数据接收到对应账号名下。"
+        ],
+        "video_src": "http://sg-production.1314-edu.com/video/guide/sign.mp4",
+        "video_placeholder": "http://sg-production.1314-edu.com/image/guide/sale.png"
+    },
+    {
+        "id": 4,
+        "tag": "card",
+        "title": "配置园区会员卡",
+        "steps": [
+            "后台系统左侧目录“市场管理-> 流水线”新建流水线。",
+            "在新建的流水线上点击“成员管理”配置你期望达到的用户数据流转对应的部门、人员。",
+            "点击左侧导航栏中“我的客户”，进行新客户的录入，且匹配对应的流水线。",
+            "在“我的客户”列表中点击列表“移交”按钮实现数据流转。",
+            "登录流水线下一级对应职员账号，“进入后台->市场管理->待分配客户->点击接收”将流转数据接收到对应账号名下。"
+        ],
+        "video_src": "http://sg-production.1314-edu.com/video/guide/sign.mp4",
+        "video_placeholder": "http://sg-production.1314-edu.com/image/guide/department.png"
+    },
+    {
+        "id": 5,
+        "tag": "purchase",
+        "title": "客户完成购卡流程",
+        "steps": [
+            "在市场管理 -> 儿童信息界面，点击列表内需要要操作的儿童信息“详情”按钮。",
+            "在弹窗内“card”元素点击购卡，进行提交。",
+            "在订单管理 -> 支付流水内对提交的新订单进行核对，确认无误后审核通过，完成购卡。"
+        ],
+        "video_src": "http://sg-production.1314-edu.com/video/guide/sign.mp4",
+        "video_placeholder": "http://sg-production.1314-edu.com/image/guide/purchase.png"
+    },
+    {
+        "id": 6,
+        "tag": "class",
+        "title": "新建班级、会员分班",
+        "steps": [
+            "在教务管理 -> 班级界面新建班级。",
+            "将销售管理 -> 会员信息列表内的点击编辑列图标，完成分班。"
+        ],
+        "video_src": "http://sg-production.1314-edu.com/video/guide/sign.mp4",
+        "video_placeholder": "http://sg-production.1314-edu.com/image/guide/class.png"
+    },
+    {
+        "id": 7,
+        "tag": "course",
+        "title": "教务课程排课",
+        "steps": [
+            "在教学管理 -> 课程列表界面新建课程。",
+            "对新建的课程点击“分班”按钮，完成分班。",
+            "在“分班”列表中点击“课程安排”按钮。",
+            "在计划界面设置上课的时间、节次排布方案。",
+            "在排课界面使用鼠标进行点击一次，完成排课。同一位置再次点击，取消排课，生成课表。"
+        ],
+        "video_src": "http://sg-production.1314-edu.com/video/guide/sign.mp4",
+        "video_placeholder": "http://sg-production.1314-edu.com/image/guide/course.png"
     }
 ]
