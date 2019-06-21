@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
-    <title>Homepage - Semantic</title>
+    <title>氧育SAAS用户使用手册</title>
 
     <link rel="stylesheet" type="text/css" href="../dist/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="guide.css">
@@ -53,18 +53,22 @@
     var tagList = [];
 
     window.onload = function () {
-        $('.ui.embed').embed();
 
         $.getJSON("guide.json", function (result) {
             tagList = result.map(function (value) {
                 return value.tag;
             });
+
+            checkMenuActiveStatus();
         });
     };
 
     $(window).scroll(function () {
-        for (i = tagList.length-1; i>=0; i--) {
-            console.log(tagList[i]);
+        checkMenuActiveStatus();
+    });
+
+    function checkMenuActiveStatus() {
+        for (i = tagList.length - 1; i >= 0; i--) {
             var hT = $('#' + tagList[i]).offset().top,
                 hH = $('#' + tagList[i]).outerHeight(),
                 wH = $(window).height(),
@@ -78,7 +82,7 @@
                 break;
             }
         }
-    });
+    }
 
     function clearMenuActiveStatus() {
         $('.ui.vertical.menu').find("a").removeClass("active");
@@ -111,14 +115,20 @@
                         <div class=\"ui list\">\
                             <div class=\"item\" v-for=\"(step, index) in steps\">\
                                 <div class=\"ui teal circular horizontal label\">{{ index+1 }}</div>\
-                                {{ step }}\
+                                <div class=\"step\">{{ step }}</div>\
                             </div>\
                         </div>\
                         <div class=\"footer\">\
                             具体的操作视频如下：\
                         </div>\
-                        <div class=\"ui embed\" :data-url=\"video_src\" :data-placeholder=\"video_placeholder\"></div>\
-                    </div>"
+                        <div class=\"ui embed\" v-on:click=\"onplay\" :data-url=\"video_src\" :data-placeholder=\"video_placeholder\"></div>\
+                    </div>",
+        methods: {
+            onplay() {
+                console.log("onPlay1");
+                this.$emit('onplay');
+            },
+        },
     })
 
     new Vue({
@@ -146,6 +156,17 @@
             $.getJSON("guide.json", function (result) {
                 $vm.guideList = result;
             });
+        },
+        updated: function () {
+            $('.ui.embed').embed();
+        },
+        methods: {
+            onplay: function () {
+                console.log("onPlay");
+                $('.ui.embed').each(function () {
+                    this.pause();
+                });
+            }
         }
     })
 </script>

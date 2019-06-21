@@ -19,6 +19,7 @@ body {
     box-shadow: 0px 8px 7px 0px 
 		rgba(52, 57, 61, 0.11);
     border-radius: 8px;
+    border: none;
 }
 
 .ui.vertical.menu .item {
@@ -47,6 +48,7 @@ body {
 		rgba(52, 57, 61, 0.11);
     border-radius: 8px;
     padding: 0;
+    border: none;
 }
 
 .content .ui.container {
@@ -84,6 +86,15 @@ body {
     padding-bottom: 26px;
     font-size: 16px;
     line-height: 24px;
+}
+
+.content .ui.list .item .label {
+    float: left;
+    background-color: rgba(0, 205, 221, 1);
+}
+
+.content .ui.list .item .step {
+    padding-left: 30px;
 }
 
 .content .footer {
