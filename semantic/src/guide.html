@@ -121,13 +121,13 @@
                         <div class=\"footer\">\
                             具体的操作视频如下：\
                         </div>\
-                        <div class=\"ui embed\" v-on:click=\"onplay\" :data-url=\"video_src\" :data-placeholder=\"video_placeholder\"></div>\
+                        <div class=\"ui embed\" :data-url=\"video_src\" :data-placeholder=\"video_placeholder\"></div>\
                     </div>",
         methods: {
-            onplay() {
-                console.log("onPlay1");
-                this.$emit('onplay');
-            },
+            // onplay() {
+            //     console.log("onPlay1");
+            //     this.$emit('onplay');
+            // },
         },
     })
 
@@ -161,12 +161,12 @@
             $('.ui.embed').embed();
         },
         methods: {
-            onplay: function () {
-                console.log("onPlay");
-                $('.ui.embed').each(function () {
-                    this.pause();
-                });
-            }
+            // onplay: function () {
+            //     console.log("onPlay");
+            //     $('.ui.embed').each(function () {
+            //         this.pause();
+            //     });
+            // }
         }
     })
 </script>
